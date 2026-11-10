@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Allegro MicroSystems: product discovery prototype</title>
+  <title>Allegro MicroSystems: product discovery prototype | ClerksWell</title>
   <link rel="stylesheet" href="./css/base.css">
-  <link rel="stylesheet" href="./css/components.css">
   <link rel="stylesheet" href="./css/proto.css">
-  <link rel="stylesheet" href="./css/theme.css">
+  <link rel="stylesheet" href="./css/cw.css">
 </head>
-<body data-page="index">
+<body data-page="index" class="cw">
   <!-- Prototype navigator: review tool, not part of the proposed site -->
   <nav class="proto-nav" aria-label="Prototype navigator">
     <div class="container">
@@ -27,69 +26,90 @@
   </nav>
 
 
-  <main>
+  <header class="cw-mast">
     <div class="container">
-      <section style="padding-top:1rem">
-        <h1>Allegro MicroSystems: product discovery</h1>
-        <p class="lede">A greyscale prototype of how engineers could find, evaluate and buy Allegro parts, built around four ways people arrive: with a part number, a product type, a system they're designing, or a list of requirements. It's deliberately unstyled so the conversation stays on structure and behaviour.</p>
-        <p>Everything that should work, works: search, filters, comparison, the block diagram, the Product Finder and the samples and quote basket. Part data comes from Allegro's live angle sensor table; stock, prices beyond the one quoted on the live site, and cross-references are sample data.</p>
-      </section>
+      <a href="#top" aria-label="ClerksWell"><img src="./assets/clerkswell-logo.png" alt="ClerksWell"></a>
+      <span class="for">Product discovery for Allegro MicroSystems</span>
+    </div>
+  </header>
 
-      <!-- Journeys (prototype contents) -->
-      <section aria-labelledby="h-j">
-        <h2 id="h-j" class="section-title">The four journeys</h2>
-        <div class="grid grid-2">
-          <article class="journey-card">
-            <span class="pill">Journey 1</span>
+  <section class="cw-hero" id="top">
+    <div class="container">
+      <p class="kicker">Prototype</p>
+      <h1>Helping engineers find, judge and buy the right Allegro part<span class="stop">.</span></h1>
+      <p>A greyscale prototype of how product discovery could work on allegromicro.com, built around the four ways engineers arrive: with a part number, a product type, a system they're designing, or a list of requirements. The prototype pages are deliberately unstyled so the conversation stays on structure and behaviour.</p>
+      <p style="margin-top:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap"><a class="cw-btn" href="./pages/home.html">Start at the homepage</a> <a class="cw-btn ghost" href="./thinking.html">Read our thinking</a></p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Journeys (prototype contents) -->
+    <section class="cw-sec" aria-labelledby="h-j">
+      <div class="container">
+        <h2 id="h-j"><span class="n">THE FOUR JOURNEYS</span>Start from what the engineer already knows</h2>
+        <p class="cw-narrow">Everything that should work, works: search, filters, comparison, the system diagram, the Product Finder and the samples and quote basket. Part data comes from Allegro's live angle sensor table; stock, prices beyond the one quoted on the live site, and cross-references are sample data.</p>
+        <div class="cw-journeys">
+          <article class="cw-journey">
+            <span class="num">1</span>
             <h3>&ldquo;I know the exact part&rdquo;</h3>
-            <p class="card-text">Part-number aware search, a part page built from the parts database, and availability, samples and quote by orderable part number.</p>
+            <p>Part-number aware search, a part page built from the parts database, and availability, samples and quote by orderable part number.</p>
             <p class="try"><strong>Try:</strong> type <em>A1335LLETR</em> into the search box and pick the orderable part, then add a sample and open the basket. Change the region in the header and watch prices and distributors change.</p>
-            <a class="btn" href="./pages/search.html?q=A1335">Open journey 1</a>
+            <a class="cw-btn" href="./pages/search.html?q=A1335">Open journey 1</a>
           </article>
-          <article class="journey-card">
-            <span class="pill">Journey 2</span>
+          <article class="cw-journey">
+            <span class="num">2</span>
             <h3>&ldquo;I know what type of product I need&rdquo;</h3>
-            <p class="card-text">The whole product range on one page with counts, then a filterable table and side-by-side comparison.</p>
+            <p>The whole product range on one page with counts, then a filterable table and side-by-side comparison.</p>
             <p class="try"><strong>Try:</strong> Products → Magnetic Rotary Angle Sensors, filter to Steer-by-Wire and ASIL D, tick three parts and compare with "show differences only".</p>
-            <a class="btn" href="./pages/products.html">Open journey 2</a>
+            <a class="cw-btn" href="./pages/products.html">Open journey 2</a>
           </article>
-          <article class="journey-card">
-            <span class="pill">Journey 3</span>
+          <article class="cw-journey">
+            <span class="num">3</span>
             <h3>&ldquo;I know what I'm designing&rdquo;</h3>
-            <p class="card-text">Applications as a separate taxonomy, a problem-first system page and a block diagram that hands over to the product table.</p>
+            <p>Applications as a separate taxonomy, a problem-first system page and a block diagram that hands over to the product table.</p>
             <p class="try"><strong>Try:</strong> on Steer-by-Wire, click "Handwheel angle sensor" in the diagram, then "See all" to land on a pre-filtered table.</p>
-            <a class="btn" href="./pages/applications.html">Open journey 3</a>
+            <a class="cw-btn" href="./pages/applications.html">Open journey 3</a>
           </article>
-          <article class="journey-card">
-            <span class="pill">Journey 4</span>
+          <article class="cw-journey">
+            <span class="num">4</span>
             <h3>&ldquo;I know the requirements, but not the component&rdquo;</h3>
-            <p class="card-text">A guided finder with live counts, competitor cross-reference, and a design profile that follows you round the site.</p>
+            <p>A guided finder with live counts, competitor cross-reference, and a design profile that follows you round the site.</p>
             <p class="try"><strong>Try:</strong> enter <em>MLX90316</em> under "Already have a part number?", then answer the questions, save the design and see which parts fit.</p>
-            <a class="btn" href="./pages/finder.html">Open journey 4</a>
+            <a class="cw-btn" href="./pages/finder.html">Open journey 4</a>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <div class="thinking-cta">
-          <div><h2 style="font-size:1.375rem;margin:0">Our thinking</h2><p style="margin:0.25rem 0 0" class="wf-meta">What we found on Allegro's site and on TI, Flowtech, Halfords, Infineon and Analog Devices, the model we recommend, and why.</p></div>
-          <a class="btn" href="./thinking.html">Read our thinking</a>
+    <section class="cw-sec cw-band" aria-labelledby="h-t">
+      <div class="container">
+        <div class="cw-cta">
+          <div><h2 id="h-t">Our thinking<span class="stop">.</span></h2><p>What we found on Allegro's site and on TI, Flowtech, Halfords, Infineon and Analog Devices, the model we recommend, and why.</p></div>
+          <a class="cw-btn" href="./thinking.html">Read our thinking</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section aria-labelledby="h-how">
-        <h2 id="h-how" class="section-title">How to review</h2>
-        <ul style="padding-left:1.25rem">
+    <section class="cw-sec" aria-labelledby="h-how">
+      <div class="container">
+        <h2 id="h-how"><span class="n">HOW TO REVIEW</span>Finding your way round</h2>
+        <ol class="cw-steps">
           <li>Use the dark bar at the top to move between journeys. It's a review tool, not part of the proposed site. Previous and next links at the foot of each page follow the same order.</li>
           <li>Switch <strong>Notes</strong> on to see what we're proposing on each page and why, plus numbered notes on behaviour (yellow) and open questions for Allegro (red).</li>
           <li>The header, menus and pages below the dark bar are the proposed site. Logos and images are labelled grey boxes on purpose.</li>
           <li>Your choices (compare list, basket, design profile, region) are remembered while the browser tab is open.</li>
-        </ul>
-      </section>
-    </div>
+        </ol>
+      </div>
+    </section>
   </main>
 
   <nav class="pager" aria-label="Prototype pages"><div class="container" data-pager></div></nav>
+  <footer class="cw-foot">
+    <div class="container row" style="justify-content:space-between">
+      <img src="./assets/clerkswell-logo.png" alt="ClerksWell">
+      <span><a href="./thinking.html">Our thinking</a></span>
+    </div>
+  </footer>
   <a hidden data-root href="./">root</a>
   <div class="toast" role="status" aria-live="polite" data-toast></div>
   <script src="./js/data.js"></script>

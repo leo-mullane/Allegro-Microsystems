@@ -90,3 +90,26 @@
 .cw .proto-nav a:hover { color: #fff; }
 .cw .cw-hero, .cw .cw-sec { margin-bottom: 0; }
 .cw-mast img { height: 52px; }
+
+/* Landing page (index) */
+.cw-journeys { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+@media (max-width: 860px) { .cw-journeys { grid-template-columns: 1fr; } }
+.cw-journey { border: 1px solid var(--line); border-top: 4px solid var(--coral); border-radius: 6px; padding: 1.4rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; background: #fff; }
+.cw-journey .num { font-family: 'Century Gothic', Questrial, sans-serif; color: var(--coral); font-size: 2rem; line-height: 1; }
+.cw-journey h3 { color: var(--navy); font-family: 'Century Gothic', Questrial, sans-serif; font-weight: 400; font-size: 1.4rem; margin: 0; }
+.cw-journey p { margin: 0; }
+.cw-journey .try { background: var(--wash); border-left: 3px solid var(--navy); padding: 0.6rem 0.9rem; font-size: 0.9375rem; }
+.cw-journey .cw-btn { align-self: flex-start; margin-top: auto; }
+.cw-band { background: var(--wash); }
+.cw-cta { background: var(--navy); color: #dfe5ef; border-radius: 6px; padding: 1.75rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.cw-cta h2 { color: #fff; margin: 0 0 0.25rem; font-size: 1.6rem; }
+.cw-cta h2 .stop, .cw-hero .stop { color: var(--coral); }
+.cw-cta p { margin: 0; max-width: 40rem; }
+.cw-steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; counter-reset: s; }
+@media (max-width: 860px) { .cw-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .cw-steps { grid-template-columns: 1fr; } }
+.cw-steps li { counter-increment: s; border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.1rem; background: #fff; font-size: 0.9375rem; }
+.cw-steps li::before { content: counter(s, decimal-leading-zero); display: block; color: var(--coral); font-weight: 700; letter-spacing: 0.1em; margin-bottom: 0.35rem; }
+.cw .pager { background: var(--wash); border-top-color: var(--line); margin-top: 0; }
+.cw .cw-foot { margin-top: 0; }
+.cw-foot img { height: 44px; padding: 6px 10px; }
