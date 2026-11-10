@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samples and quote | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/proto.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body data-page="basket">
+  <!-- Prototype navigator: review tool, not part of the proposed site -->
+  <nav class="proto-nav" aria-label="Prototype navigator">
+    <div class="container">
+      <span class="pn-title">Allegro discovery</span>
+      <a href="../index.html" data-pn="index">Overview</a>
+      <a href="../pages/home.html" data-pn="home">Home</a>
+      <a href="../pages/search.html?q=A1335" data-pn="j1"><span class="pn-num">1</span><span class="pn-label">Know the part</span></a>
+      <a href="../pages/products.html" data-pn="j2"><span class="pn-num">2</span><span class="pn-label">Know the type</span></a>
+      <a href="../pages/applications.html" data-pn="j3"><span class="pn-num">3</span><span class="pn-label">Know the system</span></a>
+      <a href="../pages/finder.html" data-pn="j4"><span class="pn-num">4</span><span class="pn-label">Know the requirements</span></a>
+      <a href="../thinking.html" data-pn="thinking">Our thinking</a>
+      <span class="pn-spacer"></span>
+      <button type="button" class="notes-switch" aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="sw-label">Notes off</span></button>
+    </div>
+  </nav>
+
+  <!-- Proposed global header: search-led, four doorways (R01–R05) -->
+  <header class="site-header">
+    <div class="nav-primary">
+      <div class="container site-top">
+        <a href="../pages/home.html" aria-label="Allegro MicroSystems home"><span class="wf-placeholder logo">Allegro logo</span></a>
+        <form class="search-wrap" action="~/pages/search.html" role="search" data-typeahead>
+          <label for="q-global" class="visually-hidden">Search Allegro</label>
+          <div class="search-box">
+            <input id="q-global" name="q" type="search" autocomplete="off" placeholder="Part number, competitor part, product type or keyword" aria-autocomplete="list" aria-controls="ta-global">
+            <button class="btn" type="submit">Search</button>
+          </div>
+          <div class="typeahead" id="ta-global" role="listbox"></div>
+        </form>
+        <div class="util">
+          <label class="visually-hidden" for="region">Region</label>
+          <select id="region" data-region>
+            <option value="US">United States · USD</option>
+            <option value="DE">Germany · EUR</option>
+            <option value="CN">China · CNY</option>
+            <option value="JP">Japan · JPY</option>
+            <option value="IN">India · USD</option>
+            <option value="KR">South Korea · USD</option>
+            <option value="TW">Taiwan · USD</option>
+            <option value="PH">Philippines · USD</option>
+          </select>
+          <label class="visually-hidden" for="lang">Language</label>
+          <select id="lang" data-lang>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+          </select>
+          <a class="basket-link" href="../pages/basket.html">Samples &amp; quote<span class="basket-count" data-basket-count>0</span></a>
+          <a href="#">Sign in</a>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-secondary" aria-label="Main">
+      <div class="container">
+        <button type="button" class="btn btn-sm btn-ghost menu-toggle" data-menu-toggle aria-expanded="false">Menu</button>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/products.html">Products &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>Sensors</h5>
+                  <ul>
+                    <li><a href="../pages/listing.html?type=angle">Position &amp; Angle Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Current Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Speed Sensors <span class="count">22</span></a></li>
+                    <li><a href="#">Switches &amp; Latches <span class="count">61</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Power</h5>
+                  <ul>
+                    <li><a href="#">Safety PMICs <span class="count">12</span></a></li>
+                    <li><a href="#">Regulators <span class="count">27</span></a></li>
+                    <li><a href="#">Isolated Gate Drivers <span class="count">15</span></a></li>
+                  </ul>
+                  <h5 style="margin-top:1rem">Motor Drivers</h5>
+                  <ul>
+                    <li><a href="#">BLDC Gate Drivers <span class="count">31</span></a></li>
+                    <li><a href="#">Integrated Motor Drivers <span class="count">40</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Other ways in</h5>
+                  <ul>
+                    <li><a href="../pages/finder.html">Product Finder</a></li>
+                    <li><a href="../pages/search.html?q=MLX90316">Cross-reference a competitor part</a></li>
+                    <li><a href="../pages/products.html">All products A–Z</a></li>
+                    <li><a href="#">New products</a></li>
+                  </ul>
+                  <p>Counts are live from the parts database.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/applications.html">Applications &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>e-Mobility &amp; Automotive</h5>
+                  <ul>
+                    <li><a href="../pages/system.html?id=sbw">Steering (EPS, Steer-by-Wire)</a></li>
+                    <li><a href="#">Braking</a></li>
+                    <li><a href="#">xEV Powertrain</a></li>
+                    <li><a href="#">Body Electronics</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Industrial &amp; Robotics</h5>
+                  <ul>
+                    <li><a href="#">Humanoid &amp; Collaborative Robots</a></li>
+                    <li><a href="#">Factory Automation</a></li>
+                    <li><a href="#">Two-Wheelers &amp; Personal Mobility</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Energy &amp; Data Centre</h5>
+                  <ul>
+                    <li><a href="#">AI Server Power</a></li>
+                    <li><a href="#">Solar &amp; Storage</a></li>
+                    <li><a href="#">EV Charging</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../pages/finder.html">Product Finder</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Design Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="flyout-backdrop" aria-hidden="true"></div>
+
+
+  <main>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2><p>One basket with three kinds of line: free samples (what Allegro fulfils today), quote requests for production volumes, and, later, direct purchase. Every line is an orderable part number, which is the level at which stock, price, MOQ and packaging live. Lines can move between samples and quote, and a quote carries the design name from the finder.</p></div>
+          <div><h2>Why</h2><p>The live site already has a sample cart and a Buy panel with stock, price at MOQ and a distributor list, then sends the visitor to Contact Sales for anything else. That's a reasonable foundation. Putting samples, quotes and purchase in one structure now means adding checkout later is a new button and a payment step, not a rebuild of the product pages.</p><p>Flowtech's quote-to-order flow (request a quote, retrieve it by reference, convert it) is the model for B2B volumes.</p></div>
+        </div>
+      </aside>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item"><a href="../pages/home.html">Home</a></li><li class="breadcrumb-item">Samples and quote</li></ul></nav>
+      <h1>Samples and quote</h1>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Pre-filled with two sample lines the first time you open it. Add more from any part page. Change quantity, move lines between samples and quote, or remove them. The quote form validates company and business email.</p>
+      <!-- Basket (R27, R28) -->
+      <div data-basket></div>
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Who fulfils direct orders when they come: Allegro, or a distributor behind an Allegro-branded checkout? The answer changes payment, tax and returns, but not this page structure.</p>
+    </div>
+  </main>
+
+  <!-- Pager: generated by app.js from the review sequence -->
+  <nav class="pager" aria-label="Prototype pages"><div class="container" data-pager></div></nav>
+  <div class="compare-tray" data-tray>
+    <div class="container">
+      <strong>Compare</strong>
+      <span data-tray-items></span>
+      <a class="btn btn-sm" href="../pages/compare.html" data-tray-go>Compare parts</a>
+      <button type="button" class="btn btn-sm btn-ghost" data-tray-clear>Clear</button>
+    </div>
+  </div>
+  <a hidden data-root href="../">root</a>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/app.js"></script>
+
+</body>
+</html>

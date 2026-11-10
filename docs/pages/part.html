@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A1335 | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/proto.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body data-page="part">
+  <!-- Prototype navigator: review tool, not part of the proposed site -->
+  <nav class="proto-nav" aria-label="Prototype navigator">
+    <div class="container">
+      <span class="pn-title">Allegro discovery</span>
+      <a href="../index.html" data-pn="index">Overview</a>
+      <a href="../pages/home.html" data-pn="home">Home</a>
+      <a href="../pages/search.html?q=A1335" data-pn="j1"><span class="pn-num">1</span><span class="pn-label">Know the part</span></a>
+      <a href="../pages/products.html" data-pn="j2"><span class="pn-num">2</span><span class="pn-label">Know the type</span></a>
+      <a href="../pages/applications.html" data-pn="j3"><span class="pn-num">3</span><span class="pn-label">Know the system</span></a>
+      <a href="../pages/finder.html" data-pn="j4"><span class="pn-num">4</span><span class="pn-label">Know the requirements</span></a>
+      <a href="../thinking.html" data-pn="thinking">Our thinking</a>
+      <span class="pn-spacer"></span>
+      <button type="button" class="notes-switch" aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="sw-label">Notes off</span></button>
+    </div>
+  </nav>
+
+  <!-- Proposed global header: search-led, four doorways (R01–R05) -->
+  <header class="site-header">
+    <div class="nav-primary">
+      <div class="container site-top">
+        <a href="../pages/home.html" aria-label="Allegro MicroSystems home"><span class="wf-placeholder logo">Allegro logo</span></a>
+        <form class="search-wrap" action="~/pages/search.html" role="search" data-typeahead>
+          <label for="q-global" class="visually-hidden">Search Allegro</label>
+          <div class="search-box">
+            <input id="q-global" name="q" type="search" autocomplete="off" placeholder="Part number, competitor part, product type or keyword" aria-autocomplete="list" aria-controls="ta-global">
+            <button class="btn" type="submit">Search</button>
+          </div>
+          <div class="typeahead" id="ta-global" role="listbox"></div>
+        </form>
+        <div class="util">
+          <label class="visually-hidden" for="region">Region</label>
+          <select id="region" data-region>
+            <option value="US">United States · USD</option>
+            <option value="DE">Germany · EUR</option>
+            <option value="CN">China · CNY</option>
+            <option value="JP">Japan · JPY</option>
+            <option value="IN">India · USD</option>
+            <option value="KR">South Korea · USD</option>
+            <option value="TW">Taiwan · USD</option>
+            <option value="PH">Philippines · USD</option>
+          </select>
+          <label class="visually-hidden" for="lang">Language</label>
+          <select id="lang" data-lang>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+          </select>
+          <a class="basket-link" href="../pages/basket.html">Samples &amp; quote<span class="basket-count" data-basket-count>0</span></a>
+          <a href="#">Sign in</a>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-secondary" aria-label="Main">
+      <div class="container">
+        <button type="button" class="btn btn-sm btn-ghost menu-toggle" data-menu-toggle aria-expanded="false">Menu</button>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/products.html">Products &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>Sensors</h5>
+                  <ul>
+                    <li><a href="../pages/listing.html?type=angle">Position &amp; Angle Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Current Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Speed Sensors <span class="count">22</span></a></li>
+                    <li><a href="#">Switches &amp; Latches <span class="count">61</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Power</h5>
+                  <ul>
+                    <li><a href="#">Safety PMICs <span class="count">12</span></a></li>
+                    <li><a href="#">Regulators <span class="count">27</span></a></li>
+                    <li><a href="#">Isolated Gate Drivers <span class="count">15</span></a></li>
+                  </ul>
+                  <h5 style="margin-top:1rem">Motor Drivers</h5>
+                  <ul>
+                    <li><a href="#">BLDC Gate Drivers <span class="count">31</span></a></li>
+                    <li><a href="#">Integrated Motor Drivers <span class="count">40</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Other ways in</h5>
+                  <ul>
+                    <li><a href="../pages/finder.html">Product Finder</a></li>
+                    <li><a href="../pages/search.html?q=MLX90316">Cross-reference a competitor part</a></li>
+                    <li><a href="../pages/products.html">All products A–Z</a></li>
+                    <li><a href="#">New products</a></li>
+                  </ul>
+                  <p>Counts are live from the parts database.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/applications.html">Applications &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>e-Mobility &amp; Automotive</h5>
+                  <ul>
+                    <li><a href="../pages/system.html?id=sbw">Steering (EPS, Steer-by-Wire)</a></li>
+                    <li><a href="#">Braking</a></li>
+                    <li><a href="#">xEV Powertrain</a></li>
+                    <li><a href="#">Body Electronics</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Industrial &amp; Robotics</h5>
+                  <ul>
+                    <li><a href="#">Humanoid &amp; Collaborative Robots</a></li>
+                    <li><a href="#">Factory Automation</a></li>
+                    <li><a href="#">Two-Wheelers &amp; Personal Mobility</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Energy &amp; Data Centre</h5>
+                  <ul>
+                    <li><a href="#">AI Server Power</a></li>
+                    <li><a href="#">Solar &amp; Storage</a></li>
+                    <li><a href="#">EV Charging</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../pages/finder.html">Product Finder</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Design Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="flyout-backdrop" aria-hidden="true"></div>
+
+
+  <main data-part>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2>
+            <p>One page per base part, at one short address (/products/a1335), built from the parts database. It answers four questions in order: is this the right part (key specs, status, fit with your design), can I trust it (datasheet as a web page as well as a PDF, safety documents), can I get it (every orderable version with stock, price at MOQ, samples, quote and distributors for your region) and what else should I look at (similar parts, the systems it is used in).</p></div>
+          <div><h2>Why</h2>
+            <p>The live A1335 page already has much of this, including price and stock behind each Buy button, which is a better start than most. But its address depends on the menu: the category table links to a legacy Angular Position Sensor ICs path that redirects to one under Motor Position Sensors, price and stock are hidden in a pop-up, and the Target Application links are not reflected back on the steer-by-wire page.</p>
+            <p>Putting the part at a flat address that never changes when the menu is reorganised is the single biggest thing for SEO and AI search, because every link and citation then points at one page.</p></div>
+        </div>
+      </aside>
+
+      <!-- Taxonomy breadcrumb: canonical product path only (R06) -->
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ul class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="../pages/products.html">Products</a></li>
+        <li class="breadcrumb-item"><a href="../pages/products.html#sensors">Sensors</a></li>
+        <li class="breadcrumb-item"><a href="../pages/products.html#position">Position &amp; Angle Sensors</a></li>
+        <li class="breadcrumb-item"><a href="../pages/listing.html?type=angle">Magnetic Rotary Angle Sensors</a></li>
+        <li class="breadcrumb-item" data-p="id">A1335</li>
+      </ul></nav>
+
+      <!-- Part summary (R07) -->
+      <section class="two-col" style="margin-bottom:2rem">
+        <div>
+          <div class="row"><span class="pill solid" data-p="status">Active</span><span class="pill" data-p="safety">ASIL B</span><span class="pill" data-p="tech">Hall (CVH)</span><span class="wf-meta">URL: /products/<span data-p="id">A1335</span></span></div>
+          <h1 style="margin-top:0.5rem"><span data-p="id">A1335</span></h1>
+          <p class="lede" data-p="name">Precision Hall-effect angle sensor IC</p>
+          <div data-fit></div>
+          <div class="row" style="margin-top:1rem">
+            <a class="btn" href="#docs" data-t="Datasheet">Datasheet</a>
+            <a class="btn btn-ghost" href="#buy">Samples and availability</a>
+            <a class="btn btn-ghost" href="#">Download CAD model</a>
+            <label style="font-weight:400"><input type="checkbox" data-compare-self> Add to compare</label>
+          </div>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>If a design profile is saved (Product Finder), this line says whether the part meets it. Try saving one in the finder, then come back.</p>
+        </div>
+        <div class="box muted">
+          <h2 style="font-size:1rem" data-t="Key specifications">Key specifications</h2>
+          <dl class="kv" data-specs></dl>
+          <p class="wf-meta" style="margin-top:0.75rem"><a href="../pages/listing.html?type=angle">Find similar parts by these values</a></p>
+        </div>
+      </section>
+
+      <!-- In-page tabs (R08) -->
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="p-overview">Overview</button>
+        <button class="tab" data-tab="p-design">Design and evaluate</button>
+        <button class="tab" data-tab="p-safety">Quality and safety</button>
+      </div>
+      <div>
+        <div class="tab-panel active" id="p-overview">
+          <div class="two-col">
+            <div>
+              <p class="sample-flag" data-not-a1335 hidden>Overview, documents and design tools below are the A1335's, shown as sample content.</p>
+              <p>The A1335 family of system-on-chip sensors delivers high-resolution, 360° contactless angle measurement. Integrated linearisation corrects magnetic non-linearities in both on-axis and off-axis designs. The family includes the AEC-Q100 qualified A1335 for automotive use and the A1335N for industrial use.</p>
+              <h3>Top features</h3>
+              <ul style="padding-left:1.25rem">
+                <li>360° contactless sensing with 12-bit resolution and 32 µs refresh rate</li>
+                <li>Circular Vertical Hall (CVH) technology for on- and off-axis applications</li>
+                <li>Selectable I²C, SPI and SENT (A1335 only) digital interfaces</li>
+                <li>On-chip harmonic and segmented linearisation</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h3 style="font-size:1rem">Used in these systems</h3>
+              <ul style="padding-left:1.25rem" data-used-in></ul>
+              <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Generated from the same part-to-application links that build the application pages, so the two can never disagree.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" id="p-design">
+          <div class="grid grid-3">
+            <article class="card"><span class="wf-meta">Programmer</span><h3 class="card-title">ASEK-2X programmers</h3><a class="card-link" href="#">View kit</a></article>
+            <article class="card"><span class="wf-meta">Software</span><h3 class="card-title">A1335 samples programmer</h3><a class="card-link" href="#">Software portal</a></article>
+            <article class="card"><span class="wf-meta">Third party</span><h3 class="card-title">Mikroe Angle Click board</h3><a class="card-link" href="#">View board</a></article>
+          </div>
+        </div>
+        <div class="tab-panel" id="p-safety">
+          <p>AEC-Q100 qualification, PPAP, RoHS and REACH declarations, and the functional safety manual and FMEDA (sign-in required).</p>
+          <a class="btn btn-ghost" href="#">Request safety documents</a>
+        </div>
+      </div>
+
+      <!-- Orderable parts: commerce attaches here (R09, R10, R11) -->
+      <section id="buy" aria-labelledby="h-buy">
+        <h2 id="h-buy" class="section-title" data-t="Availability">Availability</h2>
+        <p class="wf-meta">Prices and stock shown for your region. <span class="sample-flag">Sample data, except the A1335LLETR-DD-T price, which matches the live site</span></p>
+        <div class="table-wrap"><table class="data">
+          <thead><tr><th>Orderable part number</th><th>Grade</th><th>Stock</th><th>Price</th><th>Get it</th></tr></thead>
+          <tbody data-opns></tbody>
+        </table></div>
+        <p class="wf-note" data-note="3"><span class="wf-note-label">Behaviour</span>Change the region in the header: currency and the list of distributors change, the part data does not. Samples and quote lines go into one basket. Direct purchase would be added to this table as a third button when the parts systems can support it, with no change to the page structure.</p>
+        <p class="wf-note query" data-note="4"><span class="wf-note-label">Open question</span>Is the price shown today a list price at MOQ, and is it the same for every region? We need to know what the PLM and Parts Admin API can return reliably before we promise anything on screen.</p>
+      </section>
+
+      <!-- Documents (R12) -->
+      <section id="docs" aria-labelledby="h-docs">
+        <h2 id="h-docs" class="section-title">Documents</h2>
+        <div class="table-wrap"><table class="data">
+          <thead><tr><th>Document</th><th>Type</th><th>Format</th></tr></thead>
+          <tbody>
+            <tr><td><a href="#">A1335 datasheet</a></td><td>Datasheet</td><td><a href="#">Web page</a> · <a href="#">PDF</a></td></tr>
+            <tr><td><a href="#">A1335N datasheet (industrial)</a></td><td>Datasheet</td><td><a href="#">PDF</a></td></tr>
+            <tr><td><a href="#">Advanced On-Chip Linearization in the A1335 Angle Sensor IC (AN296127)</a></td><td>Application note</td><td><a href="#">PDF</a></td></tr>
+            <tr><td><a href="#">Using the A1335 in a Short Stroke Application (AN296166)</a></td><td>Application note</td><td><a href="#">PDF</a></td></tr>
+            <tr><td><a href="#">A1335 Programming Manual</a></td><td>User guide</td><td><a href="#">PDF</a></td></tr>
+          </tbody>
+        </table></div>
+        <p class="wf-note" data-note="5"><span class="wf-note-label">Behaviour</span>Only documents tagged to this part are shown, each once. The datasheet's summary tables are also published as HTML, so search engines and AI assistants can quote the actual values rather than guessing from a PDF.</p>
+      </section>
+
+      <!-- Similar parts (R13) -->
+      <section aria-labelledby="h-sim">
+        <h2 id="h-sim" class="section-title">Similar parts</h2>
+        <div class="grid grid-4" data-similar></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Pager: generated by app.js from the review sequence -->
+  <nav class="pager" aria-label="Prototype pages"><div class="container" data-pager></div></nav>
+  <div class="compare-tray" data-tray>
+    <div class="container">
+      <strong>Compare</strong>
+      <span data-tray-items></span>
+      <a class="btn btn-sm" href="../pages/compare.html" data-tray-go>Compare parts</a>
+      <button type="button" class="btn btn-sm btn-ghost" data-tray-clear>Clear</button>
+    </div>
+  </div>
+  <a hidden data-root href="../">root</a>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/app.js"></script>
+
+</body>
+</html>

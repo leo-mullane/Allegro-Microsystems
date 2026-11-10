@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Finder | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/proto.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-page="finder">
+  <!-- @@include protonav.html -->
+  <!-- @@include header.html -->
+
+  <main data-finder>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2><p>A guided finder for engineers who know the problem but not the component. It asks questions in the engineer's terms (what are you sensing, where does the magnet sit, what does your controller expect) rather than Allegro's catalogue terms, shows how many parts are left after every answer, and never offers an answer that would leave none. The answers are saved as a named design profile that follows the engineer round the site, marking parts that fit.</p>
+            <p>There is also a quicker way in from information the engineer already has: a competitor part number, or an Allegro part they use today.</p></div>
+          <div><h2>Why</h2><p>This is the Halfords idea. Nobody buying wiper blades is expected to know the catalogue; they enter their registration and the site filters everything to what fits the car, and keeps doing so on every page. An engineer's equivalent of the registration is a short set of constraints (market, safety level, supply, output) plus, very often, the part they are trying to replace.</p><p>Allegro has an AskAllegro assistant on the site already. A structured finder and an assistant aren't rivals: the finder's questions are the data an assistant needs to give a reliable answer.</p></div>
+        </div>
+      </aside>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item"><a href="~/pages/home.html">Home</a></li><li class="breadcrumb-item">Product Finder</li></ul></nav>
+      <div class="row" style="justify-content:space-between">
+        <h1>Product Finder</h1>
+        <button type="button" class="btn btn-sm btn-ghost" data-reset>Start again</button>
+      </div>
+      <p class="lede">Tell us about your design and we'll narrow the range as you go.</p>
+
+      <!-- Start from what you know (R24) -->
+      <section class="box muted" aria-labelledby="h-know">
+        <h2 id="h-know" style="font-size:1.125rem">Already have a part number?</h2>
+        <form data-xref-form class="row" novalidate style="align-items:flex-start">
+          <div class="field" style="flex:1 1 280px;margin-bottom:0"><label for="xref" class="visually-hidden">Competitor or Allegro part number</label><input id="xref" type="text" placeholder="Competitor part (e.g. MLX90316, TLE5012B) or an Allegro part you use"></div>
+          <button class="btn" type="submit">Find equivalents</button>
+        </form>
+        <div data-xref-out style="margin-top:0.75rem"></div>
+      </section>
+
+      <!-- Stepped finder with live count (R25, R26) -->
+      <section class="two-col" style="margin-top:2rem">
+        <div>
+          <ol class="steps" data-steps></ol>
+          <div data-step-body></div>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Each option shows how many parts it would leave. Options that would leave none are disabled rather than hidden, so the engineer can see the constraint. Back keeps earlier answers.</p>
+        </div>
+        <aside class="box live-count" aria-live="polite">
+          <p class="wf-meta">Matching parts</p>
+          <p class="big-n" data-live-count>19</p>
+          <ul style="list-style:none;font-size:0.9375rem;margin:0.75rem 0" data-live-list></ul>
+          <a class="btn" href="~/pages/listing.html?type=angle" data-show>Show parts</a>
+        </aside>
+      </section>
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Which five or six questions narrow each product family fastest? That's a conversation with the applications engineers rather than something we should guess. The question sets here are a starting point for angle sensors only.</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

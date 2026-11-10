@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our thinking: product discovery for Allegro MicroSystems | ClerksWell</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/proto.css">
+  <link rel="stylesheet" href="./css/cw.css">
+</head>
+<body data-page="thinking" class="cw">
+  <!-- Prototype navigator: review tool, not part of the proposed site -->
+  <nav class="proto-nav" aria-label="Prototype navigator">
+    <div class="container">
+      <span class="pn-title">Allegro discovery</span>
+      <a href="./index.html" data-pn="index">Overview</a>
+      <a href="./pages/home.html" data-pn="home">Home</a>
+      <a href="./pages/search.html?q=A1335" data-pn="j1"><span class="pn-num">1</span><span class="pn-label">Know the part</span></a>
+      <a href="./pages/products.html" data-pn="j2"><span class="pn-num">2</span><span class="pn-label">Know the type</span></a>
+      <a href="./pages/applications.html" data-pn="j3"><span class="pn-num">3</span><span class="pn-label">Know the system</span></a>
+      <a href="./pages/finder.html" data-pn="j4"><span class="pn-num">4</span><span class="pn-label">Know the requirements</span></a>
+      <a href="./thinking.html" data-pn="thinking">Our thinking</a>
+      <span class="pn-spacer"></span>
+      <button type="button" class="notes-switch" aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="sw-label">Notes off</span></button>
+    </div>
+  </nav>
+
+
+  <header class="cw-mast">
+    <div class="container">
+      <a href="#top" aria-label="ClerksWell"><img src="./assets/clerkswell-logo.png" alt="ClerksWell"></a>
+      <span class="for">Product discovery for Allegro MicroSystems</span>
+    </div>
+  </header>
+
+  <section class="cw-hero" id="top">
+    <div class="container">
+      <p class="kicker">Our thinking</p>
+      <h1>How engineers find, judge and buy an Allegro part, and what the site should do about it<span class="stop">.</span></h1>
+      <p>This page sets out what we found on Allegro's current site and on the sites we were asked to look at, the model we'd recommend for product discovery, and how it handles the four journeys in the brief. The greyscale prototype shows each idea working.</p>
+      <p style="margin-top:1.25rem"><a class="cw-btn" href="./index.html">Open the prototype</a></p>
+    </div>
+  </section>
+
+  <nav class="cw-toc" aria-label="On this page">
+    <div class="container">
+      <a href="#answer">The short answer</a>
+      <a href="#today">Allegro today</a>
+      <a href="#others">What others do well</a>
+      <a href="#engineers">How engineers buy</a>
+      <a href="#model">Recommended model</a>
+      <a href="#products-first">Products first?</a>
+      <a href="#journeys">The four journeys</a>
+      <a href="#global">International</a>
+      <a href="#search">SEO and AI search</a>
+      <a href="#commerce">Commerce</a>
+      <a href="#questions">Questions</a>
+      <a href="#sources">Sources</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- 1. Short answer -->
+    <section class="cw-sec" id="answer">
+      <div class="container">
+        <div class="cw-narrow">
+          <h2><span class="n">01</span>The short answer</h2>
+          <p class="lead">Allegro doesn't need a new menu so much as a single, clean record for every part, with several ways of arriving at it. Tags are part of that, but they are the last step rather than the first.</p>
+          <p>Most engineers who will buy an Allegro part never see the homepage. They arrive on a part page from a search engine, a distributor, an AI assistant or a colleague's link, often already holding a part number. Others arrive with a system to design or a set of requirements and no idea which part fits. The site has to serve all of them without publishing the same part in four places, which is what tends to happen when each route is built as its own section of the CMS.</p>
+        </div>
+        <div class="cw-answer">
+          <div><strong>One part, one page, one address</strong>Every base part lives once, at a short address that never changes when the menu does (/products/a1335). Orderable part numbers sit inside it.</div>
+          <div><strong>Four doors to the same rooms</strong>Search, Products, Applications and a Product Finder all lead to the same part pages and the same filtered tables.</div>
+          <div><strong>Two taxonomies, linked, not merged</strong>Products (what it is) and Applications (where it's used) are kept separate and connected by data, so a part can sit in several systems without being copied.</div>
+          <div><strong>Products is the backbone, search is the front door</strong>Products gives every part its home and its breadcrumb. Search, including part numbers and competitor cross-reference, does most of the work.</div>
+          <div><strong>Built on the parts database</strong>Specs, counts, filters, availability and later prices come from the parts systems, so the website can't drift from them. This is also the foundation for commerce.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Allegro today -->
+    <section class="cw-sec" id="today">
+      <div class="container">
+        <h2><span class="n">02</span>What Allegro does well today, and what holds it back</h2>
+        <p class="cw-narrow">We walked the four journeys on the live English, Chinese and Japanese sites. The site is in better shape than a lot of component manufacturers' and some of the hard parts are already in place, which makes the gaps easier to close.</p>
+        <div class="cw-two" style="margin-top:1.5rem">
+          <div class="cw-card good">
+            <h3>Working well</h3>
+            <ul class="tight">
+              <li><strong>Price and stock already reach the site.</strong> The Buy panel on the <a href="https://www.allegromicro.com/en/products/sense/linear-and-angular-position/motor-position-sensors-2d/a1335">A1335 page</a> shows Allegro stock, a unit price at MOQ ($5.54 for A1335LLETR-DD-T at 12,000 units) and distributor stock (DigiKey, Arrow, Future). Very few manufacturers expose this much.</li>
+              <li><strong>Parametric tables exist</strong>, with a CSV export, on product type pages such as <a href="https://www.allegromicro.com/en/products/sense/linear-and-angular-position/motor-position-sensors-2d">Motor Position Sensors (2D)</a>.</li>
+              <li><strong>Clickable system diagrams.</strong> The <a href="https://www.allegromicro.com/en/applications/automotive/safety-and-adas/steering-systems/electric-power-steering">Electric Power Steering</a> and <a href="https://www.allegromicro.com/en/applications/automotive/safety-and-adas/steering-systems/steer-by-wire">Steer-by-Wire</a> pages already link blocks to parts, in the way Texas Instruments does.</li>
+              <li><strong>Part pages are well organised</strong>, with datasheets, design tools, orderable part numbers, samples and target applications on one page.</li>
+              <li><strong>The language versions are properly linked</strong> with hreflang tags between English, Chinese and Japanese, and old URLs we tried redirect rather than break.</li>
+              <li><strong>Strong positioning to build on</strong>: "#1 in magnetic sensor IC market" and "over 100 million ICs into EPS systems annually" are the kind of claims engineers and AI assistants both pick up.</li>
+            </ul>
+          </div>
+          <div class="cw-card bad">
+            <h3>Holding it back</h3>
+            <ul class="tight">
+              <li><strong>Search doesn't understand part numbers.</strong> <a href="https://www.allegromicro.com/en/search?q=A1335">A1335</a> returns an application note above the product, with the same note listed twice. <a href="https://www.allegromicro.com/en/search?q=A1335LLETR-T">A1335LLETR-T</a>, the orderable number a buyer will have, returns 1,672 records led by an unrelated current sensor.</li>
+              <li><strong>Addresses follow the menu.</strong> The angle sensor table links parts through a legacy "angular-position-sensor-ics" path that redirects to one under "motor-position-sensors-2d", and the A33002 row links to the A33003 page. Every reorganisation of the menu will move parts again.</li>
+              <li><strong>Labels mix several ideas.</strong> Product types are named by technology (TMR), dimension (1D, 2D, 3D) and use (Motor Position), and "xEV Powertrains" lives at /hybrid-electric-48v. An engineer has to learn Allegro's catalogue before they can browse it.</li>
+              <li><strong>No filtering or comparison.</strong> The tables can be read and exported but not narrowed, and spec values are inconsistent ("3.7 V ~ 18 V" beside "3.7 to 18").</li>
+              <li><strong>Related content isn't related.</strong> The <a href="https://www.allegromicro.com/en/products/sense/linear-and-angular-position">Position Sensors</a> page lists application notes on current sensor PCB layout and cell phones. Parts named as suitable for steering on their own page (the A1335) don't appear on the steering system page.</li>
+              <li><strong>Translation stops at the copy.</strong> On the <a href="https://www.allegromicro.com/zh-cn/products/sense/linear-and-angular-position/motor-position-sensors-2d/a1335">Chinese A1335 page</a> the description is translated but the features, markets and several table headings are still in English.</li>
+              <li><strong>Price and stock are hidden</strong> in a pop-up behind a Buy button, with the quantity preset to the 12,000-unit MOQ, and anything beyond that goes to Contact Sales.</li>
+              <li><strong>A development host appears in search results.</strong> dev.allegromicro.com showed up in our web search results for steer-by-wire. Worth checking it is not indexable.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="cw-narrow" style="margin-top:1.5rem">Most of the problems on the right have the same cause. Products, applications and documents are each organised as pages in a tree, and the relationships between them are maintained by hand on each page. The fix is to hold those relationships as data, once, and let the pages read them.</p>
+      </div>
+    </section>
+
+    <!-- 3. Others -->
+    <section class="cw-sec" id="others">
+      <div class="container">
+        <h2><span class="n">03</span>The strongest ideas from elsewhere</h2>
+        <p class="cw-narrow">We looked at the three sites in the brief and two more that solve the same problems for engineers: Infineon and Analog Devices. We also tried Melexis, as Allegro's closest competitor in magnetic sensors, but its bot protection stopped us, so it isn't covered here.</p>
+
+        <div class="cw-ref">
+          <div class="who">Texas Instruments<small>Applications to systems to devices</small></div>
+          <div>
+            <p>TI starts from the end equipment rather than the product. <a href="https://www.ti.com/en-us/applications/automotive/chassis-control-safety">Chassis control &amp; safety</a> leads to <a href="https://www.ti.com/solution/front-wheel-steer-by-wire">Front-wheel steer-by-wire</a>, which opens with the engineering problem and four design requirements (latency, signal chain accuracy, ISO 26262, footprint), then a block diagram split into handwheel and road wheel actuators. Blocks lead to product categories and then devices. Every application page ends with a route into the parametric selection tool for that application.</p>
+            <p>Product pages such as <a href="https://www.ti.com/product/TMAG5170-Q1">TMAG5170-Q1</a> sit at a flat address with no category in it, carry a product breadcrumb (Sensors, Magnetic sensors, Multi-axis linear &amp; angle position sensors), and offer the datasheet as HTML as well as PDF, "Find other" and "Compare alternates" links, functional safety documents on request and an evaluation module.</p>
+            <p class="take"><strong>Take:</strong> the problem-first system page; block to product type to part; HTML datasheets; flat part URLs; a route from every application into the filterable table. <strong>Leave:</strong> the sheer depth of TI's tree, which works with a catalogue many times Allegro's size.</p>
+          </div>
+        </div>
+
+        <div class="cw-ref">
+          <div class="who">Flowtech<small>Product-first catalogue</small></div>
+          <div>
+            <p>Flowtech's <a href="https://flowtech.co.uk/categories/hydraulics">catalogue</a> shows every category with its product count and a "View N products" button that jumps straight to a filtered listing, so a buyer who already knows the range can skip levels. <a href="https://flowtech.co.uk/categories/hydraulics/hydraulic-hose/products">Listings</a> put "Immediately Available" first among more than twenty technical filters, show stock against each line, and carry product codes and technical sheets in the results. Quotes can be retrieved by reference after logging in.</p>
+            <p class="take"><strong>Take:</strong> counts at every level; skip-to-listing shortcuts; availability as a filter; stock in the results; quote-to-order. <strong>Leave:</strong> the very flat, very wide category lists, which suit a distributor of thousands of commodity lines more than a manufacturer of a few hundred engineered ones.</p>
+          </div>
+        </div>
+
+        <div class="cw-ref">
+          <div class="who">Halfords<small>Guided, compatibility-led discovery</small></div>
+          <div>
+            <p>On <a href="https://www.halfords.com/motoring/wiper-blades/">wiper blades</a>, Halfords doesn't expect anyone to know blade sizes. It asks for something the customer already knows (a registration number, or make and model) and filters 279 results to the ones that fit. It also sells the product with or without fitting, which turns a part into a solved problem.</p>
+            <p class="take"><strong>Take:</strong> ask for what the customer already knows; filter everything by fit; remember the answer. For an engineer, the registration number is a short set of constraints (market, safety level, supply voltage, output) or a competitor part they want to replace. <strong>Leave:</strong> consumer merchandising.</p>
+          </div>
+        </div>
+
+        <div class="cw-ref">
+          <div class="who">Infineon<small>Architectures and bills of materials</small></div>
+          <div>
+            <p>Infineon's <a href="https://www.infineon.com/application/automotive-electric-power-steering-eps">steering page</a> puts steer-by-wire, rear-wheel steering and fail-operational EPS on one block diagram with tabs, rather than three pages, and offers "Download BOM" and "Download datasheets" for the architecture shown. Diagrams and pages can be saved to a myInfineon account.</p>
+            <p class="take"><strong>Take:</strong> architecture variants as tabs; a downloadable BOM per system; saving to an account.</p>
+          </div>
+        </div>
+
+        <div class="cw-ref">
+          <div class="who">Analog Devices<small>Status and price up front</small></div>
+          <div>
+            <p>The <a href="https://www.analog.com/en/products/adxl355.html">ADXL355</a> page shows lifecycle status ("Recommended for new designs") and a 1,000-unit list price ("Starting from $46.03") at the top of the page, next to Sample &amp; Buy, a link to the product selection table and "Add to myAnalog". The address is flat.</p>
+            <p class="take"><strong>Take:</strong> lifecycle status and an indicative price in the first screen of the part page, rather than behind a button.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. How engineers buy -->
+    <section class="cw-sec" id="engineers">
+      <div class="container">
+        <h2><span class="n">04</span>How engineers discover, evaluate and buy</h2>
+        <div class="cw-narrow">
+          <p>A semiconductor isn't bought the way a hose fitting or a wiper blade is. The person who finds the part is rarely the person who buys it, and there can be a year or more between a sample and a production order. We think about it as five stages, each of which the site has to support for a different person.</p>
+        </div>
+        <div class="tw" style="margin-top:1rem">
+          <table>
+            <thead><tr><th>Stage</th><th>Who</th><th>What they need from the site</th><th>Where it lives in the model</th></tr></thead>
+            <tbody>
+              <tr><td>Explore</td><td>Systems architect</td><td>How the system works, where sensing and power sit, what's changing (48V, steer-by-wire, ASIL D)</td><td>Application and system pages, block diagrams</td></tr>
+              <tr><td>Shortlist</td><td>Design engineer</td><td>Narrow a product type quickly by the specs that matter, compare two or three</td><td>Product tables, filters, Product Finder, comparison</td></tr>
+              <tr><td>Evaluate</td><td>Design engineer</td><td>Datasheet, application notes, CAD models, programmers and evaluation boards, safety documents</td><td>Part page</td></tr>
+              <tr><td>Validate</td><td>Design engineer, quality</td><td>Samples now, PPAP and qualification data, lifecycle status</td><td>Part page, samples basket</td></tr>
+              <tr><td>Buy</td><td>Component engineer, buyer, distributor</td><td>The exact orderable part number, stock, lead time, price at volume, a quote</td><td>Orderable part rows, quote, later checkout</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="cw-narrow" style="margin-top:1rem">Two things follow from this. The part page is where almost every journey converges, so it deserves more attention than the menu. And the buyer works at the level of the orderable part number (A1335LLETR-T), not the base part (A1335), so that's the level where availability, price and anything commercial has to attach.</p>
+      </div>
+    </section>
+
+    <!-- 5. Model -->
+    <section class="cw-sec" id="model">
+      <div class="container">
+        <h2><span class="n">05</span>Our recommended model</h2>
+        <p class="cw-narrow">We'd describe it as a structured product experience with four doors. At the centre is the part record from the parts database. Around it sit two taxonomies that point at parts but don't contain them, and content that is tagged to parts, product types and systems rather than placed on pages by hand.</p>
+
+        <div class="cw-model" aria-label="Product data model">
+          <div class="col">
+            <h4>Applications taxonomy</h4>
+            <ol>
+              <li>Market<br><span class="chip">e-Mobility &amp; Automotive</span></li>
+              <li>System<br><span class="chip">Steering</span></li>
+              <li>Subsystem<br><span class="chip">Steer-by-Wire</span></li>
+              <li>Block<br><span class="chip">Handwheel angle sensor</span></li>
+            </ol>
+          </div>
+          <div class="col core">
+            <h4>Part record (from the parts database)</h4>
+            <ul>
+              <li>Base part: A1335, at /products/a1335</li>
+              <li>Normalised parameters (supply, resolution, interface, safety, temperature)</li>
+              <li>Lifecycle status</li>
+              <li>Links to product type (one) and to systems and blocks (many)</li>
+              <li>Orderable part numbers: package, grade, MOQ, stock, lead time, price, sample flag</li>
+              <li>Documents, tools and CAD, each tagged once</li>
+              <li>Translated labels, shared values</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h4>Products taxonomy</h4>
+            <ol>
+              <li>Family<br><span class="chip">Sensors</span></li>
+              <li>Group<br><span class="chip">Position &amp; Angle Sensors</span></li>
+              <li>Product type<br><span class="chip">Magnetic Rotary Angle Sensors</span></li>
+              <li>Part<br><span class="chip">A1335</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="cw-doors">
+          <div><strong>1</strong>Search, including orderable and competitor part numbers</div>
+          <div><strong>2</strong>Products: browse, filter, compare</div>
+          <div><strong>3</strong>Applications: system, block, parts</div>
+          <div><strong>4</strong>Product Finder: requirements to parts</div>
+        </div>
+
+        <div class="cw-narrow" style="margin-top:2rem">
+          <h3>Why not a single hierarchy?</h3>
+          <p>The example in the brief, e-Mobility &amp; Automotive → Steer-by-Wire → Magnetic Rotary Angle Sensors → A1335, is a good description of how an automotive engineer thinks. As a single tree it runs into trouble at the third step, because the A1335 is also used in industrial motor control and two-wheelers, and the same angle sensors serve EPS and steer-by-wire. A single tree has to either copy the part into every branch (duplicate content, the thing the brief wants to avoid) or pick one branch and hide it from the others.</p>
+          <p>Splitting it into two taxonomies joined by data keeps that journey intact, and the prototype follows it click for click. The difference is that the step from Steer-by-Wire to Magnetic Rotary Angle Sensors is a filtered link into the product table, not a folder.</p>
+
+          <h3>Rules that make it work</h3>
+          <ul class="tight">
+            <li>Each part has one product type and one address. Its breadcrumb is always the product path.</li>
+            <li>No taxonomy is deeper than four levels, and every level shows counts and a "view all parts" shortcut.</li>
+            <li>Product type names describe what the part does, not how Allegro groups its business units.</li>
+            <li>Parameter values are normalised in the parts database before they reach a filter. A filter is only as good as the dirtiest value in its column.</li>
+            <li>Part-to-system and part-to-document links live in data, not on individual pages, so system pages and part pages always agree.</li>
+            <li>Editorial content (system explainers, selection guides, articles) is written in the CMS and tagged to parts, product types and systems from controlled lists. This is where tags belong.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Products first? -->
+    <section class="cw-sec" id="products-first">
+      <div class="container cw-narrow">
+        <h2><span class="n">06</span>Should Products be the primary route?</h2>
+        <p>Partly. We'd make Products the structural backbone and search the primary route, and we'd challenge the idea that any one menu item should be primary.</p>
+        <p>Products should be the backbone because every part needs exactly one home, one breadcrumb and one address, and the product taxonomy is the only one in which each part has a single obvious parent. Applications can't play that role, since a good part belongs to many of them.</p>
+        <p>But very few engineers will start by clicking Products. Those who know the part (journey 1) will search for it, or land on the part page from elsewhere. Those who know the system (journey 3) will start from Applications. Those who know only their requirements (journey 4) need the Finder. Only journey 2 really begins with Products. The menu should therefore give Products, Applications and the Product Finder equal billing, and the search box should be the most capable thing on every page.</p>
+        <p class="cw-quote">Products is where every part lives. It isn't where most engineers will start.</p>
+        <p>If we had to rank the investment, it would be: the part record and the part page, then search, then the product tables and filters, then applications and the Finder. Each one depends on the one before.</p>
+      </div>
+    </section>
+
+    <!-- 7. Journeys -->
+    <section class="cw-sec" id="journeys">
+      <div class="container">
+        <h2><span class="n">07</span>How the model handles the four journeys</h2>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Journey</th><th>Route in the prototype</th><th>What makes it work</th><th>Try it</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1. I know the exact part</strong><br>A1335 → datasheet → sample or buy</td><td>Search (typeahead) → part page → orderable part row → samples and quote basket</td><td>Part-number aware search, including orderable and competitor numbers; exact match goes straight to the part; availability and samples in the first screen</td><td><a href="./pages/search.html?q=A1335">Search A1335</a></td></tr>
+              <tr><td><strong>2. I know the product type</strong><br>Products → Sensors → Position &amp; Angle → Magnetic Rotary Angle Sensors → A1335</td><td>Products (whole range with counts) → product table → filters → compare → part</td><td>Short taxonomy with counts; filters with live counts and greyed-out dead ends; comparison; filtered views as shareable URLs</td><td><a href="./pages/products.html">Browse products</a></td></tr>
+              <tr><td><strong>3. I know what I'm designing</strong><br>Applications → e-Mobility &amp; Automotive → Steer-by-Wire → product types → parts</td><td>Applications → system page → block diagram → block panel with suggested parts → filtered product table</td><td>Problem-first system pages; each block explains what matters and hands over to the product table with filters applied</td><td><a href="./pages/system.html?id=sbw">Steer-by-Wire</a></td></tr>
+              <tr><td><strong>4. I know the requirements</strong><br>Finder → requirements → parts → compare</td><td>Product Finder (or a competitor part) → stepped questions with live counts → saved design profile → product table marked "fits"</td><td>Questions in the engineer's terms; a design profile that follows them round the site, as Halfords does with a car</td><td><a href="./pages/finder.html">Product Finder</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="cw-narrow" style="margin-top:1rem">The journeys cross over. An engineer may come in through Steer-by-Wire, save a design profile in the Finder and then search for a part number someone mentioned. Because all four doors lead to the same pages and the profile is remembered, that's one journey rather than three.</p>
+      </div>
+    </section>
+
+    <!-- 8. International -->
+    <section class="cw-sec" id="global">
+      <div class="container cw-narrow">
+        <h2><span class="n">08</span>International product discovery</h2>
+        <p>Allegro's traffic comes from the US, China, Japan, India, South Korea, Germany, Taiwan and the Philippines, and the site runs in English, Chinese and Japanese. Discovery is mostly language-neutral (part numbers, values and units are the same everywhere), which helps.</p>
+        <ul class="tight">
+          <li><strong>Separate language from region.</strong> A Chinese-speaking engineer in Germany, or an English-speaking one in Taiwan, needs their own language and their own region's distributors, currency and stock. The prototype header has a region selector alongside the language selector for this.</li>
+          <li><strong>Translate the labels, not the data.</strong> Parameter names, filter labels and product type names come from translated lists; values and part numbers don't change. That fixes the half-translated tables on the current Chinese and Japanese pages and means a new product only needs its description translated.</li>
+          <li><strong>Search in every language.</strong> Product type synonyms in each language (角度传感器, 角度センサ) map to the same product types, and part number search behaves identically everywhere.</li>
+          <li><strong>Regional availability.</strong> Distributors and stock shown should reflect the region, and the quote form should know the ship-to country.</li>
+          <li><strong>Keep hreflang and canonical addresses tidy.</strong> The current site does this well; flat part URLs make it simpler still.</li>
+          <li><strong>Consider Korean.</strong> South Korea is in the top traffic countries without a language version. Machine translation of labels and specs would cover most of the discovery journey at modest cost, with full content later if the traffic justifies it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 9. SEO / GEO -->
+    <section class="cw-sec" id="search">
+      <div class="container cw-narrow">
+        <h2><span class="n">09</span>SEO, AI search and duplicate content</h2>
+        <p>Engineers increasingly ask an AI assistant which part to use before they visit any site. Those assistants favour pages that state facts plainly in text, are easy to attribute to one address, and are consistent with each other. Most of the model above helps with this as a side effect.</p>
+        <ul class="tight">
+          <li>One address per part, independent of the menu, so every link, citation and distributor reference accumulates on one page.</li>
+          <li>Key specs and datasheet tables published as HTML, not only in PDFs, with Product structured data (manufacturer, part number, status and later offers).</li>
+          <li>Filtered views are useful to people but shouldn't all be indexed. Index product types and a small set of useful combinations (for example "ASIL D angle sensors"), and keep the rest out of the index.</li>
+          <li>Short, factual selection guides on each product type page ("Hall-effect or TMR?") answer the questions assistants are asked, in Allegro's words.</li>
+          <li>System pages that explain the engineering problem give Allegro a citable answer for "how does steer-by-wire work", which the current page already starts to do.</li>
+          <li>Documents tagged once and listed only where relevant remove the near-duplicate resource lists that currently appear across product pages.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 10. Commerce -->
+    <section class="cw-sec" id="commerce">
+      <div class="container cw-narrow">
+        <h2><span class="n">10</span>A foundation for commerce</h2>
+        <p>Allegro doesn't sell online yet beyond free samples, but wants to. We'd build the discovery experience so that adding commerce later is a change to the buttons on the orderable part rows and a new checkout step, not a rebuild.</p>
+        <ul class="tight">
+          <li>Commercial data attaches to the orderable part number: stock, lead time, MOQ, packaging, price breaks and sample eligibility.</li>
+          <li>One basket handles samples today, quote requests for volume, and direct purchase later. The prototype shows all three, with checkout switched off.</li>
+          <li>Distributor stock stays visible next to Allegro's own, by region. For most engineers buying small quantities, a distributor will still be the right answer.</li>
+          <li>Accounts hold design profiles, saved comparisons, quotes and orders, which gives Allegro a view of which designs are in progress.</li>
+          <li>The parts database, the Parts Admin API and the existing sync processes are the right source for all of this. The questions are about how reliable and how fresh that data is (see below), not whether the website can show it.</li>
+        </ul>
+        <p>The honest caveat is that a commerce-ready front end is the cheap part. Pricing policy, channel conflict with distributors, tax and fulfilment are decisions Allegro has to make, and they will shape the checkout more than anything on this page.</p>
+      </div>
+    </section>
+
+    <!-- 11. Questions -->
+    <section class="cw-sec" id="questions">
+      <div class="container cw-narrow">
+        <h2><span class="n">11</span>Questions for Allegro</h2>
+        <p>Answers to these would firm up both the model and the estimate.</p>
+        <ol class="tight">
+          <li>What can the parts database and Parts Admin API return today, and how fresh is it: parameters, lifecycle status, orderable part numbers, stock, price, distributor stock?</li>
+          <li>Who owns the product taxonomy and the parameter definitions, and how clean is the parametric data across all product types?</li>
+          <li>Where do the part-to-application links come from today (the Target Application list and the block diagrams appear to be maintained separately)?</li>
+          <li>Is there a competitor cross-reference table we could use, or would one need to be built?</li>
+          <li>Which filters do engineers actually use? Search logs, AskAllegro conversations and the field applications engineers would all help.</li>
+          <li>What does direct commerce mean to Allegro: small quantities only, or volume too; Allegro fulfilment or a distributor behind an Allegro checkout?</li>
+          <li>Which markets and languages matter most over the next two to three years, and is Korean on the list?</li>
+          <li>What should be available without signing in, and what is the role of an account?</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 12. Sources -->
+    <section class="cw-sec" id="sources">
+      <div class="container">
+        <h2><span class="n">12</span>Sources and method</h2>
+        <p class="cw-narrow">We reviewed the live sites in a browser and recorded only what we saw. Part data in the prototype comes from the live angle sensor table; technology, interface and safety values, orderable part numbers other than the A1335's, prices other than the one quoted above, stock, competitor cross-references and all counts outside the angle sensors are illustrative. We didn't have access to Allegro analytics, search logs or the parts database, and couldn't review Melexis.</p>
+        <ul class="cw-src">
+          <li><a href="https://www.allegromicro.com/en/">Allegro MicroSystems homepage</a></li>
+          <li><a href="https://www.allegromicro.com/en/products">Allegro: Products</a></li>
+          <li><a href="https://www.allegromicro.com/en/products/sense/linear-and-angular-position">Allegro: Magnetic Position Sensors</a></li>
+          <li><a href="https://www.allegromicro.com/en/products/sense/linear-and-angular-position/motor-position-sensors-2d">Allegro: Motor Position Sensors (2D)</a></li>
+          <li><a href="https://www.allegromicro.com/en/products/sense/linear-and-angular-position/motor-position-sensors-2d/a1335">Allegro: A1335</a></li>
+          <li><a href="https://www.allegromicro.com/zh-cn/products/sense/linear-and-angular-position/motor-position-sensors-2d/a1335">Allegro: A1335 (Chinese)</a></li>
+          <li><a href="https://www.allegromicro.com/en/search?q=A1335">Allegro search: A1335</a></li>
+          <li><a href="https://www.allegromicro.com/en/search?q=A1335LLETR-T">Allegro search: A1335LLETR-T</a></li>
+          <li><a href="https://www.allegromicro.com/en/applications/automotive">Allegro: Automotive applications</a></li>
+          <li><a href="https://www.allegromicro.com/en/applications/automotive/safety-and-adas/steering-systems">Allegro: Steering Systems</a></li>
+          <li><a href="https://www.allegromicro.com/en/applications/automotive/safety-and-adas/steering-systems/electric-power-steering">Allegro: Electric Power Steering</a></li>
+          <li><a href="https://www.allegromicro.com/en/applications/automotive/safety-and-adas/steering-systems/steer-by-wire">Allegro: Steer-by-Wire</a></li>
+          <li><a href="https://www.ti.com/en-us/applications/automotive/adas">TI: ADAS</a></li>
+          <li><a href="https://www.ti.com/en-us/applications/automotive/chassis-control-safety">TI: Chassis control &amp; safety</a></li>
+          <li><a href="https://www.ti.com/solution/front-wheel-steer-by-wire">TI: Front-wheel steer-by-wire</a></li>
+          <li><a href="https://www.ti.com/product/TMAG5170-Q1">TI: TMAG5170-Q1</a></li>
+          <li><a href="https://flowtech.co.uk/">Flowtech homepage</a></li>
+          <li><a href="https://flowtech.co.uk/categories/hydraulics">Flowtech: Hydraulics</a></li>
+          <li><a href="https://flowtech.co.uk/categories/hydraulics/hydraulic-hose/products">Flowtech: Hydraulic hose listing</a></li>
+          <li><a href="https://www.halfords.com/motoring/wiper-blades/">Halfords: Wiper blades</a></li>
+          <li><a href="https://www.infineon.com/application/automotive-electric-power-steering-eps">Infineon: EPS and steer-by-wire</a></li>
+          <li><a href="https://www.analog.com/en/products/adxl355.html">Analog Devices: ADXL355</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cw-foot">
+    <div class="container row" style="justify-content:space-between">
+      <img src="./assets/clerkswell-logo.png" alt="ClerksWell">
+      <span><a href="./index.html">Back to the prototype</a></span>
+    </div>
+  </footer>
+  <a hidden data-root href="./">root</a>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <script src="./js/data.js"></script>
+  <script src="./js/wireframe.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

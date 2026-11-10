@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applications | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/proto.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-page="applications">
+  <!-- @@include protonav.html -->
+  <!-- @@include header.html -->
+
+  <main>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2><p>Applications become a second, separate taxonomy (Market, System, Subsystem) that points at products rather than containing them. Each system page carries a block diagram, and every block resolves to a product type and a filtered set of parts. This page shows the whole tree so nobody has to guess which branch steer-by-wire is in.</p></div>
+          <div><h2>Why</h2><p>Allegro's live application pages are strong in places. The steer-by-wire and electric power steering pages already have clickable block diagrams that list parts, much like Texas Instruments. The structure around them is less clear: "xEV Powertrains" sits at /hybrid-electric-48v, the Transportation group under Automotive links into /industrial/personal-mobility, and the parts in the diagrams are maintained separately from the Target Application links on part pages.</p><p>The brief's example, e-Mobility &amp; Automotive → Steer-by-Wire → Magnetic Rotary Angle Sensors → A1335, crosses from one taxonomy to the other at the third step. We think that's right, as long as the crossing is a link and not a copy.</p></div>
+        </div>
+      </aside>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item"><a href="~/pages/home.html">Home</a></li><li class="breadcrumb-item">Applications</li></ul></nav>
+      <h1>Applications</h1>
+      <p class="lede">Start from the system you are designing. Each system shows where Allegro parts fit, with reference designs and the parts suited to each block.</p>
+
+      <!-- Market tabs (R21) -->
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="m-auto">e-Mobility &amp; Automotive</button>
+        <button class="tab" data-tab="m-ind">Industrial &amp; Robotics</button>
+        <button class="tab" data-tab="m-energy">Energy &amp; Data Centre</button>
+        <button class="tab" data-tab="m-cons">Consumer</button>
+      </div>
+      <div>
+        <div class="tab-panel active" id="m-auto">
+          <div class="grid grid-4">
+            <div class="box"><h3 style="font-size:1.0625rem">Steering</h3><ul class="tax-tree"><li><a href="~/pages/system.html?id=sbw"><strong>Steer-by-Wire</strong></a></li><li><a href="~/pages/system.html?id=eps">Electric Power Steering</a></li><li><a href="#">Rear-Wheel Steering</a></li></ul></div>
+            <div class="box"><h3 style="font-size:1.0625rem">Braking</h3><ul class="tax-tree"><li><a href="#">Brake-by-Wire</a></li><li><a href="#">ABS and ESC</a></li></ul></div>
+            <div class="box"><h3 style="font-size:1.0625rem">xEV Powertrain</h3><ul class="tax-tree"><li><a href="~/pages/system.html?id=traction">Traction Inverter</a></li><li><a href="#">On-Board Charger</a></li><li><a href="#">Battery Management and Disconnect</a></li><li><a href="#">DC/DC Converter</a></li></ul></div>
+            <div class="box"><h3 style="font-size:1.0625rem">Body and Two-Wheelers</h3><ul class="tax-tree"><li><a href="#">Seat and In-Cabin Motors</a></li><li><a href="~/pages/system.html?id=emotor2w">Two-Wheeler e-Motor</a></li><li><a href="~/pages/system.html?id=throttle">Pedal &amp; Throttle Position</a></li></ul></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="m-ind"><div class="grid grid-3"><div class="box"><h3 style="font-size:1.0625rem">Robotics</h3><ul class="tax-tree"><li><a href="~/pages/system.html?id=robotics">Humanoid and Collaborative Robot Joints</a></li><li><a href="#">Factory Automation</a></li></ul></div><div class="box"><h3 style="font-size:1.0625rem">Motor Control</h3><ul class="tax-tree"><li><a href="#">Industrial Drives</a></li><li><a href="#">Pumps and Fans</a></li></ul></div></div></div>
+        <div class="tab-panel" id="m-energy"><div class="grid grid-3"><div class="box"><h3 style="font-size:1.0625rem">Data Centre</h3><ul class="tax-tree"><li><a href="#">AI Server Power (800V)</a></li><li><a href="#">Server Cooling</a></li></ul></div><div class="box"><h3 style="font-size:1.0625rem">Clean Energy</h3><ul class="tax-tree"><li><a href="#">Solar Inverters</a></li><li><a href="#">EV Charging</a></li></ul></div></div></div>
+        <div class="tab-panel" id="m-cons"><div class="grid grid-3"><div class="box"><h3 style="font-size:1.0625rem">Appliances</h3><ul class="tax-tree"><li><a href="#">White Goods Motors</a></li></ul></div></div></div>
+      </div>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Three levels at most. A system that applies to two markets (two-wheeler motors are automotive and personal mobility) has one page and is listed under both, rather than being published twice.</p>
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Market names: the brief uses "e-Mobility &amp; Automotive", the live site uses "Automotive". Is there an agreed set of market names from marketing or investor relations that this should follow?</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

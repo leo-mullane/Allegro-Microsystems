@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/proto.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-page="products">
+  <!-- @@include protonav.html -->
+  <!-- @@include header.html -->
+
+  <main>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2>
+            <p>A product taxonomy of no more than four levels (Family, Group, Product Type, Part), shown all at once on one page with live part counts, so an engineer can see the whole range and jump straight to the level they recognise. Every product type has a "view all parts" shortcut that skips the remaining levels and lands on a filterable table.</p></div>
+          <div><h2>Why</h2>
+            <p>On the live site, reaching the angle sensor table takes four clicks through pages that are mostly introductory copy (Products, Sensors, Position Sensors, Motor Position Sensors (2D)), and only at the last step does the table appear. The labels mix technology (TMR, Hall), dimensions (1D, 2D, 3D) and uses (Motor Position), which makes it hard to guess which branch a part is in.</p>
+            <p>Showing counts and a shortcut at every level is borrowed from Flowtech's catalogue, where it lets trade buyers move as fast as they already know the range.</p></div>
+        </div>
+      </aside>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item"><a href="~/pages/home.html">Home</a></li><li class="breadcrumb-item">Products</li></ul></nav>
+      <h1>Products</h1>
+      <p class="lede">Every Allegro product type, with the number of parts in each. Choose a type to filter and compare parts, or use the <a href="~/pages/finder.html">Product Finder</a> if you would rather describe what you need.</p>
+
+      <!-- Whole-range view with counts (R16) -->
+      <section id="sensors" aria-labelledby="h-sensors">
+        <h2 id="h-sensors" class="section-title">Sensors</h2>
+        <div class="grid grid-4">
+          <div class="box" id="position">
+            <h3 style="font-size:1.0625rem">Position &amp; Angle Sensors</h3>
+            <ul class="tax-tree">
+              <li><a href="~/pages/listing.html?type=angle"><strong>Magnetic Rotary Angle Sensors</strong></a> <span class="wf-meta">19</span></li>
+              <li><a href="~/pages/listing.html?type=linear">Linear Hall Sensors (1D)</a> <span class="wf-meta">14</span></li>
+              <li><a href="~/pages/listing.html?type=3d">3D Multi-Axis Sensors</a> <span class="wf-meta">9</span></li>
+              <li><a href="~/pages/listing.html?type=inductive">Inductive Position Sensors</a> <span class="wf-meta">6</span></li>
+            </ul>
+            <a class="card-link" href="#">View all 48 position parts</a>
+          </div>
+          <div class="box">
+            <h3 style="font-size:1.0625rem">Current Sensors</h3>
+            <ul class="tax-tree">
+              <li><a href="~/pages/listing.html?type=current">Isolated Current Sensors</a> <span class="wf-meta">48</span></li>
+              <li><a href="#">Coreless Current Sensors</a> <span class="wf-meta">17</span></li>
+              <li><a href="#">TMR Current Sensors</a> <span class="wf-meta">8</span></li>
+            </ul>
+            <a class="card-link" href="#">View all 73 current parts</a>
+          </div>
+          <div class="box">
+            <h3 style="font-size:1.0625rem">Speed Sensors</h3>
+            <ul class="tax-tree">
+              <li><a href="~/pages/listing.html?type=speed">Wheel and Transmission Speed</a> <span class="wf-meta">22</span></li>
+              <li><a href="#">Cam and Crank Sensors</a> <span class="wf-meta">11</span></li>
+            </ul>
+            <a class="card-link" href="#">View all 33 speed parts</a>
+          </div>
+          <div class="box">
+            <h3 style="font-size:1.0625rem">Switches &amp; Latches</h3>
+            <ul class="tax-tree">
+              <li><a href="~/pages/listing.html?type=switch">Hall and TMR Switches &amp; Latches</a> <span class="wf-meta">61</span></li>
+            </ul>
+            <a class="card-link" href="#">View all 61 parts</a>
+          </div>
+        </div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Counts come from the parts database at build time and update on each sync, so empty or near-empty types are visible to the product team before customers notice them. Part counts other than the 19 angle sensors are placeholders.</p>
+      </section>
+
+      <section aria-labelledby="h-power">
+        <h2 id="h-power" class="section-title">Power and Motor Drivers</h2>
+        <div class="grid grid-4">
+          <div class="box"><h3 style="font-size:1.0625rem">Power Management</h3><ul class="tax-tree"><li><a href="~/pages/listing.html?type=pmic">Safety PMICs</a> <span class="wf-meta">12</span></li><li><a href="#">Regulators</a> <span class="wf-meta">27</span></li></ul></div>
+          <div class="box"><h3 style="font-size:1.0625rem">Isolated Gate Drivers</h3><ul class="tax-tree"><li><a href="#">SiC and GaN Gate Drivers</a> <span class="wf-meta">15</span></li></ul></div>
+          <div class="box"><h3 style="font-size:1.0625rem">Motor Drivers</h3><ul class="tax-tree"><li><a href="~/pages/listing.html?type=gate">BLDC Gate Drivers</a> <span class="wf-meta">31</span></li><li><a href="#">Integrated Motor Drivers</a> <span class="wf-meta">40</span></li></ul></div>
+          <div class="box muted"><h3 style="font-size:1.0625rem">Not sure which type?</h3><p class="card-text">Describe what you need to sense or drive and we'll narrow it down.</p><a class="btn btn-sm" href="~/pages/finder.html">Product Finder</a></div>
+        </div>
+      </section>
+
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>The product type names here (for example "Magnetic Rotary Angle Sensors" rather than "Motor Position Sensors (2D)") follow the example in the brief. Who owns the product taxonomy, and does it need to match the Product Selection Guide and the distributors' categories?</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

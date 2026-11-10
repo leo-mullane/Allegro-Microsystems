@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/proto.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body data-page="home">
+  <!-- Prototype navigator: review tool, not part of the proposed site -->
+  <nav class="proto-nav" aria-label="Prototype navigator">
+    <div class="container">
+      <span class="pn-title">Allegro discovery</span>
+      <a href="../index.html" data-pn="index">Overview</a>
+      <a href="../pages/home.html" data-pn="home">Home</a>
+      <a href="../pages/search.html?q=A1335" data-pn="j1"><span class="pn-num">1</span><span class="pn-label">Know the part</span></a>
+      <a href="../pages/products.html" data-pn="j2"><span class="pn-num">2</span><span class="pn-label">Know the type</span></a>
+      <a href="../pages/applications.html" data-pn="j3"><span class="pn-num">3</span><span class="pn-label">Know the system</span></a>
+      <a href="../pages/finder.html" data-pn="j4"><span class="pn-num">4</span><span class="pn-label">Know the requirements</span></a>
+      <a href="../thinking.html" data-pn="thinking">Our thinking</a>
+      <span class="pn-spacer"></span>
+      <button type="button" class="notes-switch" aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="sw-label">Notes off</span></button>
+    </div>
+  </nav>
+
+  <!-- Proposed global header: search-led, four doorways (R01–R05) -->
+  <header class="site-header">
+    <div class="nav-primary">
+      <div class="container site-top">
+        <a href="../pages/home.html" aria-label="Allegro MicroSystems home"><span class="wf-placeholder logo">Allegro logo</span></a>
+        <form class="search-wrap" action="~/pages/search.html" role="search" data-typeahead>
+          <label for="q-global" class="visually-hidden">Search Allegro</label>
+          <div class="search-box">
+            <input id="q-global" name="q" type="search" autocomplete="off" placeholder="Part number, competitor part, product type or keyword" aria-autocomplete="list" aria-controls="ta-global">
+            <button class="btn" type="submit">Search</button>
+          </div>
+          <div class="typeahead" id="ta-global" role="listbox"></div>
+        </form>
+        <div class="util">
+          <label class="visually-hidden" for="region">Region</label>
+          <select id="region" data-region>
+            <option value="US">United States · USD</option>
+            <option value="DE">Germany · EUR</option>
+            <option value="CN">China · CNY</option>
+            <option value="JP">Japan · JPY</option>
+            <option value="IN">India · USD</option>
+            <option value="KR">South Korea · USD</option>
+            <option value="TW">Taiwan · USD</option>
+            <option value="PH">Philippines · USD</option>
+          </select>
+          <label class="visually-hidden" for="lang">Language</label>
+          <select id="lang" data-lang>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+          </select>
+          <a class="basket-link" href="../pages/basket.html">Samples &amp; quote<span class="basket-count" data-basket-count>0</span></a>
+          <a href="#">Sign in</a>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-secondary" aria-label="Main">
+      <div class="container">
+        <button type="button" class="btn btn-sm btn-ghost menu-toggle" data-menu-toggle aria-expanded="false">Menu</button>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/products.html">Products &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>Sensors</h5>
+                  <ul>
+                    <li><a href="../pages/listing.html?type=angle">Position &amp; Angle Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Current Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Speed Sensors <span class="count">22</span></a></li>
+                    <li><a href="#">Switches &amp; Latches <span class="count">61</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Power</h5>
+                  <ul>
+                    <li><a href="#">Safety PMICs <span class="count">12</span></a></li>
+                    <li><a href="#">Regulators <span class="count">27</span></a></li>
+                    <li><a href="#">Isolated Gate Drivers <span class="count">15</span></a></li>
+                  </ul>
+                  <h5 style="margin-top:1rem">Motor Drivers</h5>
+                  <ul>
+                    <li><a href="#">BLDC Gate Drivers <span class="count">31</span></a></li>
+                    <li><a href="#">Integrated Motor Drivers <span class="count">40</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Other ways in</h5>
+                  <ul>
+                    <li><a href="../pages/finder.html">Product Finder</a></li>
+                    <li><a href="../pages/search.html?q=MLX90316">Cross-reference a competitor part</a></li>
+                    <li><a href="../pages/products.html">All products A–Z</a></li>
+                    <li><a href="#">New products</a></li>
+                  </ul>
+                  <p>Counts are live from the parts database.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/applications.html">Applications &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>e-Mobility &amp; Automotive</h5>
+                  <ul>
+                    <li><a href="../pages/system.html?id=sbw">Steering (EPS, Steer-by-Wire)</a></li>
+                    <li><a href="#">Braking</a></li>
+                    <li><a href="#">xEV Powertrain</a></li>
+                    <li><a href="#">Body Electronics</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Industrial &amp; Robotics</h5>
+                  <ul>
+                    <li><a href="#">Humanoid &amp; Collaborative Robots</a></li>
+                    <li><a href="#">Factory Automation</a></li>
+                    <li><a href="#">Two-Wheelers &amp; Personal Mobility</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Energy &amp; Data Centre</h5>
+                  <ul>
+                    <li><a href="#">AI Server Power</a></li>
+                    <li><a href="#">Solar &amp; Storage</a></li>
+                    <li><a href="#">EV Charging</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../pages/finder.html">Product Finder</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Design Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="flyout-backdrop" aria-hidden="true"></div>
+
+
+  <main>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2>
+            <p>The homepage stops being mainly a news carousel and becomes a set of four doors, one for each way an engineer arrives: with a part number, with a product type, with a system they are designing, or with a list of requirements and no idea which part meets them.</p>
+            <p>All four doors lead to the same part pages and the same filtered tables, so there is one version of each part and one set of data behind it.</p></div>
+          <div><h2>Why</h2>
+            <p>Today's homepage leads with trade shows and press releases. That suits a visitor who wants news, but most visitors with a design to finish want a part, and the only route to one from the homepage is through the menu or a search box hidden behind an icon.</p>
+            <p>Searching the orderable part number A1335LLETR-T on the live site returns 1,672 records and the first one is a current sensor. The search box needs to be the most capable thing on the page, not the smallest.</p></div>
+        </div>
+      </aside>
+
+      <!-- Search-led hero (R01, R02) -->
+      <section aria-labelledby="h-hero" style="padding:2rem 0 1rem">
+        <h1 id="h-hero">Find the right part for your design</h1>
+        <p class="lede">Search every Allegro sensor, power and motor driver ICs by part number, competitor part, product type or the system you're building.</p>
+        <form action="~/pages/search.html" role="search" data-typeahead class="search-wrap" style="position:relative;max-width:46rem">
+          <label for="q-hero" class="visually-hidden">Search parts</label>
+          <div class="search-box"><input id="q-hero" name="q" type="search" autocomplete="off" placeholder="Try A1335, A1335LLETR-T, MLX90316 or 'angle sensor'"><button class="btn" type="submit">Search</button></div>
+          <div class="typeahead" role="listbox"></div>
+        </form>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Typeahead groups results as Parts, Orderable part numbers, Cross-reference, Product types, Applications and Documents. Typing an exact part or orderable part number and pressing Enter goes straight to the part page, skipping the results list.</p>
+      </section>
+
+      <!-- Four doorways (R03) -->
+      <section aria-labelledby="h-doors">
+        <h2 id="h-doors" class="section-title">Or start from what you know</h2>
+        <div class="doorways">
+          <article class="doorway"><span class="q">I know the part</span><h3>Search by part number</h3><p class="card-text">Base part, orderable part number or a competitor's part. Datasheet, samples and stock in one place.</p><a class="btn btn-ghost" href="../pages/search.html?q=A1335">Search a part</a></article>
+          <article class="doorway"><span class="q">I know the product type</span><h3>Browse products</h3><p class="card-text">Sensors, power and motor drivers, narrowing to a filterable table with live counts.</p><a class="btn btn-ghost" href="../pages/products.html">Browse products</a></article>
+          <article class="doorway"><span class="q">I know what I'm designing</span><h3>Explore applications</h3><p class="card-text">From market to system to the block you are working on, with the parts that fit each block.</p><a class="btn btn-ghost" href="../pages/applications.html">Explore applications</a></article>
+          <article class="doorway"><span class="q">I know my requirements</span><h3>Use the Product Finder</h3><p class="card-text">Answer a few questions in plain terms. We narrow the range as you go and remember your design.</p><a class="btn btn-ghost" href="../pages/finder.html">Start the finder</a></article>
+        </div>
+        <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>The same four doors appear in the main navigation (Products, Applications, Product Finder and the search box), so nobody needs the homepage to find them.</p>
+      </section>
+
+      <!-- Continue where you left off (R14) -->
+      <section aria-labelledby="h-recent">
+        <h2 id="h-recent" class="section-title">Pick up where you left off</h2>
+        <div class="profile" data-profile-bar hidden></div>
+        <div class="grid grid-3" style="margin-top:1rem">
+          <article class="card"><span class="wf-meta">Recently viewed part</span><h3 class="card-title"><a href="../pages/part.html?id=A1335">A1335</a></h3><p class="card-text">Precision Hall-effect angle sensor IC with I²C, SPI and SENT interfaces</p></article>
+          <article class="card"><span class="wf-meta">Saved comparison</span><h3 class="card-title"><a href="../pages/compare.html?ids=A1335,A33020,A33110">A1335 vs A33020 vs A33110</a></h3><p class="card-text">Three angle sensors for steering</p></article>
+          <article class="card"><span class="wf-meta">Open quote</span><h3 class="card-title"><a href="../pages/basket.html">Q-SAMPLE-0001</a></h3><p class="card-text">A1335LLETR-DD-T, 24,000 units</p></article>
+        </div>
+        <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>How much should be remembered without signing in? We have assumed the browser remembers recent parts and the design profile, and an account keeps quotes and saved comparisons.</p>
+      </section>
+
+      <!-- Featured content, demoted (R15) -->
+      <section aria-labelledby="h-news">
+        <h2 id="h-news" class="section-title">New from Allegro</h2>
+        <div class="grid grid-3">
+          <article class="card"><div class="wf-placeholder ratio-16-9">Image 16:9</div><span class="wf-meta">Event</span><h3 class="card-title">See 800V AI power delivery and next-gen xEV safety demos at Electronica</h3><a class="card-link" href="#">Book a meeting</a></article>
+          <article class="card"><div class="wf-placeholder ratio-16-9">Image 16:9</div><span class="wf-meta">New product</span><h3 class="card-title">48V power and precision sensing for next-generation ADAS</h3><a class="card-link" href="#">Read the announcement</a></article>
+          <article class="card"><div class="wf-placeholder ratio-16-9">Image 16:9</div><span class="wf-meta">Application</span><h3 class="card-title">Steer-by-wire: sensing for steering with no column</h3><a class="card-link" href="../pages/system.html?id=sbw">Explore the system</a></article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Pager: generated by app.js from the review sequence -->
+  <nav class="pager" aria-label="Prototype pages"><div class="container" data-pager></div></nav>
+  <div class="compare-tray" data-tray>
+    <div class="container">
+      <strong>Compare</strong>
+      <span data-tray-items></span>
+      <a class="btn btn-sm" href="../pages/compare.html" data-tray-go>Compare parts</a>
+      <button type="button" class="btn btn-sm btn-ghost" data-tray-clear>Clear</button>
+    </div>
+  </div>
+  <a hidden data-root href="../">root</a>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/app.js"></script>
+
+</body>
+</html>

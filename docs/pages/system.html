@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steer-by-Wire | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/proto.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body data-page="system">
+  <!-- Prototype navigator: review tool, not part of the proposed site -->
+  <nav class="proto-nav" aria-label="Prototype navigator">
+    <div class="container">
+      <span class="pn-title">Allegro discovery</span>
+      <a href="../index.html" data-pn="index">Overview</a>
+      <a href="../pages/home.html" data-pn="home">Home</a>
+      <a href="../pages/search.html?q=A1335" data-pn="j1"><span class="pn-num">1</span><span class="pn-label">Know the part</span></a>
+      <a href="../pages/products.html" data-pn="j2"><span class="pn-num">2</span><span class="pn-label">Know the type</span></a>
+      <a href="../pages/applications.html" data-pn="j3"><span class="pn-num">3</span><span class="pn-label">Know the system</span></a>
+      <a href="../pages/finder.html" data-pn="j4"><span class="pn-num">4</span><span class="pn-label">Know the requirements</span></a>
+      <a href="../thinking.html" data-pn="thinking">Our thinking</a>
+      <span class="pn-spacer"></span>
+      <button type="button" class="notes-switch" aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="sw-label">Notes off</span></button>
+    </div>
+  </nav>
+
+  <!-- Proposed global header: search-led, four doorways (R01–R05) -->
+  <header class="site-header">
+    <div class="nav-primary">
+      <div class="container site-top">
+        <a href="../pages/home.html" aria-label="Allegro MicroSystems home"><span class="wf-placeholder logo">Allegro logo</span></a>
+        <form class="search-wrap" action="~/pages/search.html" role="search" data-typeahead>
+          <label for="q-global" class="visually-hidden">Search Allegro</label>
+          <div class="search-box">
+            <input id="q-global" name="q" type="search" autocomplete="off" placeholder="Part number, competitor part, product type or keyword" aria-autocomplete="list" aria-controls="ta-global">
+            <button class="btn" type="submit">Search</button>
+          </div>
+          <div class="typeahead" id="ta-global" role="listbox"></div>
+        </form>
+        <div class="util">
+          <label class="visually-hidden" for="region">Region</label>
+          <select id="region" data-region>
+            <option value="US">United States · USD</option>
+            <option value="DE">Germany · EUR</option>
+            <option value="CN">China · CNY</option>
+            <option value="JP">Japan · JPY</option>
+            <option value="IN">India · USD</option>
+            <option value="KR">South Korea · USD</option>
+            <option value="TW">Taiwan · USD</option>
+            <option value="PH">Philippines · USD</option>
+          </select>
+          <label class="visually-hidden" for="lang">Language</label>
+          <select id="lang" data-lang>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+          </select>
+          <a class="basket-link" href="../pages/basket.html">Samples &amp; quote<span class="basket-count" data-basket-count>0</span></a>
+          <a href="#">Sign in</a>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-secondary" aria-label="Main">
+      <div class="container">
+        <button type="button" class="btn btn-sm btn-ghost menu-toggle" data-menu-toggle aria-expanded="false">Menu</button>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/products.html">Products &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>Sensors</h5>
+                  <ul>
+                    <li><a href="../pages/listing.html?type=angle">Position &amp; Angle Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Current Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Speed Sensors <span class="count">22</span></a></li>
+                    <li><a href="#">Switches &amp; Latches <span class="count">61</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Power</h5>
+                  <ul>
+                    <li><a href="#">Safety PMICs <span class="count">12</span></a></li>
+                    <li><a href="#">Regulators <span class="count">27</span></a></li>
+                    <li><a href="#">Isolated Gate Drivers <span class="count">15</span></a></li>
+                  </ul>
+                  <h5 style="margin-top:1rem">Motor Drivers</h5>
+                  <ul>
+                    <li><a href="#">BLDC Gate Drivers <span class="count">31</span></a></li>
+                    <li><a href="#">Integrated Motor Drivers <span class="count">40</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Other ways in</h5>
+                  <ul>
+                    <li><a href="../pages/finder.html">Product Finder</a></li>
+                    <li><a href="../pages/search.html?q=MLX90316">Cross-reference a competitor part</a></li>
+                    <li><a href="../pages/products.html">All products A–Z</a></li>
+                    <li><a href="#">New products</a></li>
+                  </ul>
+                  <p>Counts are live from the parts database.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/applications.html">Applications &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>e-Mobility &amp; Automotive</h5>
+                  <ul>
+                    <li><a href="../pages/system.html?id=sbw">Steering (EPS, Steer-by-Wire)</a></li>
+                    <li><a href="#">Braking</a></li>
+                    <li><a href="#">xEV Powertrain</a></li>
+                    <li><a href="#">Body Electronics</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Industrial &amp; Robotics</h5>
+                  <ul>
+                    <li><a href="#">Humanoid &amp; Collaborative Robots</a></li>
+                    <li><a href="#">Factory Automation</a></li>
+                    <li><a href="#">Two-Wheelers &amp; Personal Mobility</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Energy &amp; Data Centre</h5>
+                  <ul>
+                    <li><a href="#">AI Server Power</a></li>
+                    <li><a href="#">Solar &amp; Storage</a></li>
+                    <li><a href="#">EV Charging</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../pages/finder.html">Product Finder</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Design Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="flyout-backdrop" aria-hidden="true"></div>
+
+
+  <main>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2><p>A system page that starts from the engineering problem (no mechanical link between the handwheel and the rack), shows the architecture as a clickable block diagram, and lets the engineer pick the block they are responsible for. Each block explains what matters for that socket, suggests parts, and hands over to the product table with the right filters already applied. Variants of the architecture sit on tabs rather than separate pages.</p></div>
+          <div><h2>Why</h2><p>This is the journey the VP of Marketing will recognise from Texas Instruments: Application, System, Block diagram, Product category, Device. Allegro is most of the way there already. The gap is that today's diagram pop-ups are a list of part numbers with no reason given and no route into the wider range, and the A1335 (which lists steering as a target application) doesn't appear on the steer-by-wire page at all.</p><p>Infineon's steering page does one thing worth taking: a single diagram with tabs for steer-by-wire, rear-wheel steering and fail-operational EPS, and a "download BOM" for each.</p></div>
+        </div>
+      </aside>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item"><a href="../pages/applications.html">Applications</a></li><li class="breadcrumb-item"><a href="../pages/applications.html">e-Mobility &amp; Automotive</a></li><li class="breadcrumb-item"><a href="../pages/applications.html">Steering</a></li><li class="breadcrumb-item" data-sys-name>Steer-by-Wire</li></ul></nav>
+
+      <section class="two-col">
+        <div>
+          <h1 data-sys-name>Steer-by-Wire</h1>
+          <p class="sample-flag" data-sys-flag hidden>Only the steer-by-wire system is built in this prototype, so its content is shown here.</p>
+          <p class="lede">With no steering column, the handwheel and the road wheels are joined only by sensors, software and motors. Every sensing socket has to be fail-operational, and the driver still expects to feel the road.</p>
+        </div>
+        <div class="box muted">
+          <h2 style="font-size:1rem">Design requirements</h2>
+          <ul style="padding-left:1.25rem;font-size:0.9375rem">
+            <li>Redundant, ASIL D angle and torque sensing</li>
+            <li>Low latency between handwheel and rack</li>
+            <li>Stray field immunity next to high-current motors</li>
+            <li>12V and 48V supply options</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Architecture variants and block diagram (R22, R23) -->
+      <section aria-labelledby="h-diag">
+        <h2 id="h-diag" class="section-title">System block diagram</h2>
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="v-sbw">Steer-by-wire (HWA + RWA)</button>
+          <button class="tab" data-tab="v-eps">Fail-operational EPS</button>
+        </div>
+        <div>
+          <div class="tab-panel active" id="v-sbw">
+            <p class="wf-meta">Select a block to see what matters there and which parts suit it.</p>
+            <div class="diagram" data-diagram>
+              <div class="zone">
+                <h3>Handwheel actuator (HWA)</h3>
+                <div class="blocks">
+                  <button type="button" class="block" data-block="hwa" aria-pressed="false">Handwheel angle sensor<small>Angle sensor · ASIL D</small></button>
+                  <button type="button" class="block" data-block="torque" aria-pressed="false">Steering torque / feel<small>Linear sensor</small></button>
+                  <button type="button" class="block" data-block="hwmotor" aria-pressed="false">Feedback motor position<small>Angle sensor</small></button>
+                  <button type="button" class="block" data-block="pmic" aria-pressed="false">Safety PMIC<small>Power</small></button>
+                  <span class="block other">Microcontroller<small>Third party</small></span>
+                  <span class="block other">CAN-FD transceiver<small>Third party</small></span>
+                </div>
+              </div>
+              <div class="zone">
+                <h3>Road wheel actuator (RWA)</h3>
+                <div class="blocks">
+                  <button type="button" class="block" data-block="rwamotor" aria-pressed="false">Rack motor position<small>Angle sensor</small></button>
+                  <button type="button" class="block" data-block="current" aria-pressed="false">Phase current sensing<small>Current sensor</small></button>
+                  <button type="button" class="block" data-block="gate" aria-pressed="false">BLDC gate driver<small>Motor driver · 12V/48V</small></button>
+                  <button type="button" class="block" data-block="pmic" aria-pressed="false">Safety PMIC<small>Power</small></button>
+                  <span class="block other">Power MOSFETs<small>Third party</small></span>
+                  <span class="block other">Microcontroller<small>Third party</small></span>
+                </div>
+              </div>
+            </div>
+            <div class="block-panel" data-block-panel hidden aria-live="polite"></div>
+            <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Each block is a link between the application taxonomy and the product taxonomy, plus a short reason. "See all" opens the product table with Application: Steer-by-Wire and the block's key requirement already filtered. Third-party blocks are shown dashed so the architecture is complete without implying Allegro makes them.</p>
+          </div>
+          <div class="tab-panel" id="v-eps"><div class="wf-placeholder" style="min-height:220px">Fail-operational EPS block diagram (same component, different block set)</div></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-res">
+        <h2 id="h-res" class="section-title">Reference designs and resources</h2>
+        <div class="grid grid-3">
+          <article class="card"><span class="wf-meta">Reference design</span><h3 class="card-title">Redundant handwheel angle sensing with dual-die A33020</h3><a class="card-link" href="#">View design and BOM</a></article>
+          <article class="card"><span class="wf-meta">Application note</span><h3 class="card-title">Output Protocols for Angle and Linear Position Sensors (AN296191)</h3><a class="card-link" href="#">Read</a></article>
+          <article class="card"><span class="wf-meta">Webinar</span><h3 class="card-title">Designing steering sensors for fail-operational systems</h3><a class="card-link" href="#">Watch</a></article>
+        </div>
+        <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Who maintains block diagrams today, and could the part-to-block links be held in the parts database rather than in each page? If they stay in the CMS they will drift from the part data again.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Pager: generated by app.js from the review sequence -->
+  <nav class="pager" aria-label="Prototype pages"><div class="container" data-pager></div></nav>
+  <div class="compare-tray" data-tray>
+    <div class="container">
+      <strong>Compare</strong>
+      <span data-tray-items></span>
+      <a class="btn btn-sm" href="../pages/compare.html" data-tray-go>Compare parts</a>
+      <button type="button" class="btn btn-sm btn-ghost" data-tray-clear>Clear</button>
+    </div>
+  </div>
+  <a hidden data-root href="../">root</a>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/app.js"></script>
+
+</body>
+</html>

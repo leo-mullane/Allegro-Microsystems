@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare parts | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/proto.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-page="compare">
+  <!-- @@include protonav.html -->
+  <!-- @@include header.html -->
+
+  <main>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2><p>Side-by-side comparison of up to four parts, with the rows that differ highlighted and an option to hide the rows that don't. Samples can be ordered from the comparison, because this is often the point where an engineer decides to try two candidates.</p></div>
+          <div><h2>Why</h2><p>There is no comparison on the live site, so today the comparison happens in a spreadsheet built from the CSV export or from datasheets opened in separate tabs. The data already exists to do it on the page.</p></div>
+        </div>
+      </aside>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item"><a href="~/pages/listing.html?type=angle">Magnetic Rotary Angle Sensors</a></li><li class="breadcrumb-item">Compare</li></ul></nav>
+      <h1>Compare parts</h1>
+      <div class="row" style="margin-bottom:1rem">
+        <label style="font-weight:400"><input type="checkbox" id="diff-only"> Show differences only</label>
+        <a class="btn btn-sm btn-ghost" href="#">Share this comparison</a>
+        <a class="btn btn-sm btn-ghost" href="~/pages/listing.html?type=angle">Add another part</a>
+      </div>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Shaded rows differ. The comparison is in the address (?ids=A1335,A33020,A33110), so it can be shared with a colleague or a distributor.</p>
+      <div class="table-wrap" data-compare-table></div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

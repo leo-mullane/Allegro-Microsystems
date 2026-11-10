@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/proto.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body data-page="products">
+  <!-- Prototype navigator: review tool, not part of the proposed site -->
+  <nav class="proto-nav" aria-label="Prototype navigator">
+    <div class="container">
+      <span class="pn-title">Allegro discovery</span>
+      <a href="../index.html" data-pn="index">Overview</a>
+      <a href="../pages/home.html" data-pn="home">Home</a>
+      <a href="../pages/search.html?q=A1335" data-pn="j1"><span class="pn-num">1</span><span class="pn-label">Know the part</span></a>
+      <a href="../pages/products.html" data-pn="j2"><span class="pn-num">2</span><span class="pn-label">Know the type</span></a>
+      <a href="../pages/applications.html" data-pn="j3"><span class="pn-num">3</span><span class="pn-label">Know the system</span></a>
+      <a href="../pages/finder.html" data-pn="j4"><span class="pn-num">4</span><span class="pn-label">Know the requirements</span></a>
+      <a href="../thinking.html" data-pn="thinking">Our thinking</a>
+      <span class="pn-spacer"></span>
+      <button type="button" class="notes-switch" aria-pressed="false"><span class="dot" aria-hidden="true"></span><span class="sw-label">Notes off</span></button>
+    </div>
+  </nav>
+
+  <!-- Proposed global header: search-led, four doorways (R01–R05) -->
+  <header class="site-header">
+    <div class="nav-primary">
+      <div class="container site-top">
+        <a href="../pages/home.html" aria-label="Allegro MicroSystems home"><span class="wf-placeholder logo">Allegro logo</span></a>
+        <form class="search-wrap" action="~/pages/search.html" role="search" data-typeahead>
+          <label for="q-global" class="visually-hidden">Search Allegro</label>
+          <div class="search-box">
+            <input id="q-global" name="q" type="search" autocomplete="off" placeholder="Part number, competitor part, product type or keyword" aria-autocomplete="list" aria-controls="ta-global">
+            <button class="btn" type="submit">Search</button>
+          </div>
+          <div class="typeahead" id="ta-global" role="listbox"></div>
+        </form>
+        <div class="util">
+          <label class="visually-hidden" for="region">Region</label>
+          <select id="region" data-region>
+            <option value="US">United States · USD</option>
+            <option value="DE">Germany · EUR</option>
+            <option value="CN">China · CNY</option>
+            <option value="JP">Japan · JPY</option>
+            <option value="IN">India · USD</option>
+            <option value="KR">South Korea · USD</option>
+            <option value="TW">Taiwan · USD</option>
+            <option value="PH">Philippines · USD</option>
+          </select>
+          <label class="visually-hidden" for="lang">Language</label>
+          <select id="lang" data-lang>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+          </select>
+          <a class="basket-link" href="../pages/basket.html">Samples &amp; quote<span class="basket-count" data-basket-count>0</span></a>
+          <a href="#">Sign in</a>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-secondary" aria-label="Main">
+      <div class="container">
+        <button type="button" class="btn btn-sm btn-ghost menu-toggle" data-menu-toggle aria-expanded="false">Menu</button>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/products.html">Products &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>Sensors</h5>
+                  <ul>
+                    <li><a href="../pages/listing.html?type=angle">Position &amp; Angle Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Current Sensors <span class="count">48</span></a></li>
+                    <li><a href="#">Speed Sensors <span class="count">22</span></a></li>
+                    <li><a href="#">Switches &amp; Latches <span class="count">61</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Power</h5>
+                  <ul>
+                    <li><a href="#">Safety PMICs <span class="count">12</span></a></li>
+                    <li><a href="#">Regulators <span class="count">27</span></a></li>
+                    <li><a href="#">Isolated Gate Drivers <span class="count">15</span></a></li>
+                  </ul>
+                  <h5 style="margin-top:1rem">Motor Drivers</h5>
+                  <ul>
+                    <li><a href="#">BLDC Gate Drivers <span class="count">31</span></a></li>
+                    <li><a href="#">Integrated Motor Drivers <span class="count">40</span></a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Other ways in</h5>
+                  <ul>
+                    <li><a href="../pages/finder.html">Product Finder</a></li>
+                    <li><a href="../pages/search.html?q=MLX90316">Cross-reference a competitor part</a></li>
+                    <li><a href="../pages/products.html">All products A–Z</a></li>
+                    <li><a href="#">New products</a></li>
+                  </ul>
+                  <p>Counts are live from the parts database.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/applications.html">Applications &#9662;</a>
+            <div class="nav-flyout wide mega">
+              <div class="flyout-columns">
+                <div class="flyout-column">
+                  <h5>e-Mobility &amp; Automotive</h5>
+                  <ul>
+                    <li><a href="../pages/system.html?id=sbw">Steering (EPS, Steer-by-Wire)</a></li>
+                    <li><a href="#">Braking</a></li>
+                    <li><a href="#">xEV Powertrain</a></li>
+                    <li><a href="#">Body Electronics</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Industrial &amp; Robotics</h5>
+                  <ul>
+                    <li><a href="#">Humanoid &amp; Collaborative Robots</a></li>
+                    <li><a href="#">Factory Automation</a></li>
+                    <li><a href="#">Two-Wheelers &amp; Personal Mobility</a></li>
+                  </ul>
+                </div>
+                <div class="flyout-column">
+                  <h5>Energy &amp; Data Centre</h5>
+                  <ul>
+                    <li><a href="#">AI Server Power</a></li>
+                    <li><a href="#">Solar &amp; Storage</a></li>
+                    <li><a href="#">EV Charging</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../pages/finder.html">Product Finder</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Design Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="flyout-backdrop" aria-hidden="true"></div>
+
+
+  <main>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2>
+            <p>A product taxonomy of no more than four levels (Family, Group, Product Type, Part), shown all at once on one page with live part counts, so an engineer can see the whole range and jump straight to the level they recognise. Every product type has a "view all parts" shortcut that skips the remaining levels and lands on a filterable table.</p></div>
+          <div><h2>Why</h2>
+            <p>On the live site, reaching the angle sensor table takes four clicks through pages that are mostly introductory copy (Products, Sensors, Position Sensors, Motor Position Sensors (2D)), and only at the last step does the table appear. The labels mix technology (TMR, Hall), dimensions (1D, 2D, 3D) and uses (Motor Position), which makes it hard to guess which branch a part is in.</p>
+            <p>Showing counts and a shortcut at every level is borrowed from Flowtech's catalogue, where it lets trade buyers move as fast as they already know the range.</p></div>
+        </div>
+      </aside>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item"><a href="../pages/home.html">Home</a></li><li class="breadcrumb-item">Products</li></ul></nav>
+      <h1>Products</h1>
+      <p class="lede">Every Allegro product type, with the number of parts in each. Choose a type to filter and compare parts, or use the <a href="../pages/finder.html">Product Finder</a> if you would rather describe what you need.</p>
+
+      <!-- Whole-range view with counts (R16) -->
+      <section id="sensors" aria-labelledby="h-sensors">
+        <h2 id="h-sensors" class="section-title">Sensors</h2>
+        <div class="grid grid-4">
+          <div class="box" id="position">
+            <h3 style="font-size:1.0625rem">Position &amp; Angle Sensors</h3>
+            <ul class="tax-tree">
+              <li><a href="../pages/listing.html?type=angle"><strong>Magnetic Rotary Angle Sensors</strong></a> <span class="wf-meta">19</span></li>
+              <li><a href="../pages/listing.html?type=linear">Linear Hall Sensors (1D)</a> <span class="wf-meta">14</span></li>
+              <li><a href="../pages/listing.html?type=3d">3D Multi-Axis Sensors</a> <span class="wf-meta">9</span></li>
+              <li><a href="../pages/listing.html?type=inductive">Inductive Position Sensors</a> <span class="wf-meta">6</span></li>
+            </ul>
+            <a class="card-link" href="#">View all 48 position parts</a>
+          </div>
+          <div class="box">
+            <h3 style="font-size:1.0625rem">Current Sensors</h3>
+            <ul class="tax-tree">
+              <li><a href="../pages/listing.html?type=current">Isolated Current Sensors</a> <span class="wf-meta">48</span></li>
+              <li><a href="#">Coreless Current Sensors</a> <span class="wf-meta">17</span></li>
+              <li><a href="#">TMR Current Sensors</a> <span class="wf-meta">8</span></li>
+            </ul>
+            <a class="card-link" href="#">View all 73 current parts</a>
+          </div>
+          <div class="box">
+            <h3 style="font-size:1.0625rem">Speed Sensors</h3>
+            <ul class="tax-tree">
+              <li><a href="../pages/listing.html?type=speed">Wheel and Transmission Speed</a> <span class="wf-meta">22</span></li>
+              <li><a href="#">Cam and Crank Sensors</a> <span class="wf-meta">11</span></li>
+            </ul>
+            <a class="card-link" href="#">View all 33 speed parts</a>
+          </div>
+          <div class="box">
+            <h3 style="font-size:1.0625rem">Switches &amp; Latches</h3>
+            <ul class="tax-tree">
+              <li><a href="../pages/listing.html?type=switch">Hall and TMR Switches &amp; Latches</a> <span class="wf-meta">61</span></li>
+            </ul>
+            <a class="card-link" href="#">View all 61 parts</a>
+          </div>
+        </div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Counts come from the parts database at build time and update on each sync, so empty or near-empty types are visible to the product team before customers notice them. Part counts other than the 19 angle sensors are placeholders.</p>
+      </section>
+
+      <section aria-labelledby="h-power">
+        <h2 id="h-power" class="section-title">Power and Motor Drivers</h2>
+        <div class="grid grid-4">
+          <div class="box"><h3 style="font-size:1.0625rem">Power Management</h3><ul class="tax-tree"><li><a href="../pages/listing.html?type=pmic">Safety PMICs</a> <span class="wf-meta">12</span></li><li><a href="#">Regulators</a> <span class="wf-meta">27</span></li></ul></div>
+          <div class="box"><h3 style="font-size:1.0625rem">Isolated Gate Drivers</h3><ul class="tax-tree"><li><a href="#">SiC and GaN Gate Drivers</a> <span class="wf-meta">15</span></li></ul></div>
+          <div class="box"><h3 style="font-size:1.0625rem">Motor Drivers</h3><ul class="tax-tree"><li><a href="../pages/listing.html?type=gate">BLDC Gate Drivers</a> <span class="wf-meta">31</span></li><li><a href="#">Integrated Motor Drivers</a> <span class="wf-meta">40</span></li></ul></div>
+          <div class="box muted"><h3 style="font-size:1.0625rem">Not sure which type?</h3><p class="card-text">Describe what you need to sense or drive and we'll narrow it down.</p><a class="btn btn-sm" href="../pages/finder.html">Product Finder</a></div>
+        </div>
+      </section>
+
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>The product type names here (for example "Magnetic Rotary Angle Sensors" rather than "Motor Position Sensors (2D)") follow the example in the brief. Who owns the product taxonomy, and does it need to match the Product Selection Guide and the distributors' categories?</p>
+    </div>
+  </main>
+
+  <!-- Pager: generated by app.js from the review sequence -->
+  <nav class="pager" aria-label="Prototype pages"><div class="container" data-pager></div></nav>
+  <div class="compare-tray" data-tray>
+    <div class="container">
+      <strong>Compare</strong>
+      <span data-tray-items></span>
+      <a class="btn btn-sm" href="../pages/compare.html" data-tray-go>Compare parts</a>
+      <button type="button" class="btn btn-sm btn-ghost" data-tray-clear>Clear</button>
+    </div>
+  </div>
+  <a hidden data-root href="../">root</a>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/app.js"></script>
+
+</body>
+</html>

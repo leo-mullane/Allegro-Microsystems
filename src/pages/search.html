@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search results | Allegro product discovery prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/proto.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-page="search">
+  <!-- @@include protonav.html -->
+  <!-- @@include header.html -->
+
+  <main>
+    <div class="container">
+
+      <aside class="proposal-panel" aria-label="What we're proposing">
+        <div class="pp-grid">
+          <div><h2>What we're proposing</h2>
+            <p>Search that understands part numbers. An exact base part such as A1335 is pinned at the top with its key specs and the three things people come for: the datasheet, samples and availability. Orderable part numbers (A1335LLETR-T) resolve to the right row on the right part page. A competitor's part number returns the nearest Allegro equivalent.</p></div>
+          <div><h2>Why</h2>
+            <p>On the live site, searching A1335 puts an application note above the product, and the same note appears twice. Searching A1335LLETR-T, which is what a buyer or a distributor quote will contain, returns 1,672 loosely related records.</p>
+            <p>Engineers who already know the part are the easiest visitors to serve and the ones most likely to be ready for a sample or a quote.</p></div>
+        </div>
+      </aside>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item"><a href="~/pages/home.html">Home</a></li><li class="breadcrumb-item">Search</li></ul></nav>
+      <h1>Results for &ldquo;<span data-q>A1335</span>&rdquo;</h1>
+      <p class="wf-meta">Try also: <a href="?q=A1335LLETR-T">A1335LLETR-T</a> (orderable part) · <a href="?q=MLX90316">MLX90316</a> (competitor part) · <a href="?q=angle">angle</a> (keyword) · <a href="?q=A133">A133</a> (partial)</p>
+
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Part numbers are matched on prefix and normalised (case, spaces, hyphens, packaging suffixes), so "a1335 lletr" still finds A1335LLETR-T. Part numbers are the same in every language, so this works identically on the Chinese and Japanese sites.</p>
+
+      <div data-search-results class="stack" aria-live="polite"></div>
+
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Is there an internal cross-reference table we can use for competitor parts, or would it need to be built and maintained by the applications team? The pairs in this prototype are illustrative only.</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>
